@@ -1,0 +1,144 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.25.2.0
+Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: conan marcus, lkfjlaj, LIC=UB463-ALS04-16EQV-P8GQE-7GG93-DF7M1
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.25.2.0
+Toolchain Path:  E:\Keil_v525\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.25.2.0
+Dialog DLL:      DCM.DLL V1.17.1.0
+Target DLL:      UL2CM3.DLL V1.160.12.0
+Dialog DLL:      TCM.DLL V1.35.1.0
+ 
+<h2>Project:</h2>
+C:\Users\Conor\OneDrive - The University of Melbourne\PhD\stm32_keil4\test.uvprojx
+Project File Date:  07/13/2018
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'E:\Keil_v525\ARM\ARMCC\Bin'
+Rebuild target 'Target 1'
+assembling startup_stm32f10x_hd.s...
+compiling retarget_io.c...
+compiling main.c...
+AngLocDes.h(16): warning:  #550-D: variable "index_mid"  was set but never used
+  	int index_max, index_mid, index_min;
+main.c(12): warning:  #177-D: variable "j"  was declared but never referenced
+  	int i,j;
+main.c(15): warning:  #550-D: variable "input"  was set but never used
+  	float input[LENGTH]; // To store the max-variance angle for following procedures
+main.c(16): warning:  #177-D: variable "lpf_out"  was declared but never referenced
+  	float lpf_out[LENGTH] = {0}; // to store the output of lpf
+main.c(17): warning:  #177-D: variable "detrend_out"  was declared but never referenced
+  	float *detrend_out;
+main.c(18): warning:  #177-D: variable "fft_out"  was declared but never referenced
+  	float fft_out[LENGTH] = {0}; // to export the output of FFT before release the memory
+main.c(19): warning:  #177-D: variable "map_out"  was declared but never referenced
+  	float *map_out;
+main.c(20): warning:  #177-D: variable "hz_lower"  was declared but never referenced
+     	float hz_lower = 0.2;
+main.c(21): warning:  #177-D: variable "hz_upper"  was declared but never referenced
+  	float hz_upper = 1.25;
+main.c(22): warning:  #177-D: variable "sort_out"  was declared but never referenced
+  	int *sort_out;
+main.c(23): warning:  #177-D: variable "freq_out"  was declared but never referenced
+  	float *freq_out;
+main.c(24): warning:  #177-D: variable "breath_rate"  was declared but never referenced
+  	float breath_rate;
+main.c(25): warning:  #177-D: variable "odd_lower"  was declared but never referenced
+  	float odd_lower = 12.5;
+main.c(26): warning:  #177-D: variable "odd_upper"  was declared but never referenced
+  	float odd_upper = 40.0;
+main.c: 14 warnings, 0 errors
+compiling FS_Config.c...
+E:\Keil_v525\ARM\PACK\Keil\MDK-Middleware\7.7.0\FileSystem\Include\fs_config.h(178): error:  #35: #error directive: "Initial Current ::File System:Drive is not enabled in FS_Config.c"
+    #error "Initial Current ::File System:Drive is not enabled in FS_Config.c"
+RTE\File_System\FS_Config.c: 0 warnings, 1 error
+compiling system_stm32f10x.c...
+".\Objects\test.axf" - 1 Error(s), 14 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.3.0.pack
+                ARM.CMSIS.5.3.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.1.1
+   * Component: DSP Version: 1.5.2
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.ARM_Compiler.1.4.0.pack
+                Keil.ARM_Compiler.1.4.0
+                Keil ARM Compiler extensions for ARM Compiler 5 and ARM Compiler 6
+   * Component: File Variant: File System Version: 1.4.0
+   * Component: STDERR Variant: Breakpoint Version: 1.4.0
+   * Component: STDIN Variant: Breakpoint Version: 1.4.0
+   * Component: STDOUT Variant: Breakpoint Version: 1.4.0
+   * Component: TTY Variant: Breakpoint Version: 1.4.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.MDK-Middleware.7.7.0.pack
+                Keil.MDK-Middleware.7.7.0
+                Middleware for Keil MDK-Professional and MDK-Plus
+   * Component: CORE Variant: LFN Debug Version: 6.10.1
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.2.0.pack
+                Keil.STM32F1xx_DFP.2.2.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\STM32F103ZE
+  .\RTE\_Target_1
+  E:\Keil_v525\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include
+  E:\Keil_v525\ARM\PACK\Keil\MDK-Middleware\7.7.0\FileSystem\Include
+  E:\Keil_v525\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.1.1
+
+   * Component: ARM::CMSIS:DSP:1.5.2
+      Include file:  CMSIS\Include\arm_math.h
+      Library file:  CMSIS\Lib\ARM\arm_cortexM3l_math.lib
+
+   * Component: Keil.ARM Compiler::Compiler:I/O:File:File System:1.4.0
+      Source file:   Source\retarget_io.c
+
+   * Component: Keil.ARM Compiler::Compiler:I/O:STDERR:Breakpoint:1.4.0
+      Source file:   Source\retarget_io.c
+
+   * Component: Keil.ARM Compiler::Compiler:I/O:STDIN:Breakpoint:1.4.0
+      Source file:   Source\retarget_io.c
+
+   * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:Breakpoint:1.4.0
+      Source file:   Source\retarget_io.c
+
+   * Component: Keil.ARM Compiler::Compiler:I/O:TTY:Breakpoint:1.4.0
+      Source file:   Source\retarget_io.c
+
+   * Component: Keil.MDK-Plus::File System:CORE:LFN Debug:6.10.1
+      Include file:  FileSystem\Include\rl_fs.h
+      Source file:   FileSystem\Config\FS_Config.c
+      Library file:  FileSystem\Lib\ARM\FS_Dbg_LFN_CM3_L.lib
+
+   * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device\Source\ARM\startup_stm32f10x_hd.s
+      Source file:   Device\Source\system_stm32f10x.c
+      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+      Include file:  RTE_Driver\Config\RTE_Device.h
+Target not created.
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>

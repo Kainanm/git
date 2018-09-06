@@ -1,0 +1,9 @@
+.\objects\sys_1.o: Exti\SYSTEM\sys\sys.c
+.\objects\sys_1.o: Exti\SYSTEM\sys\sys.h
+.\objects\sys_1.o: .\Exti\SYSTEM\sys\stm32f10x.h
+.\objects\sys_1.o: .\Resp\arm_fft_bin_example\Include\core_cm3.h
+.\objects\sys_1.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\sys_1.o: .\Resp\arm_fft_bin_example\Include\cmsis_version.h
+.\objects\sys_1.o: .\Resp\arm_fft_bin_example\Include\cmsis_compiler.h
+.\objects\sys_1.o: .\Resp\arm_fft_bin_example\Include\cmsis_armcc.h
+.\objects\sys_1.o: .\Exti\SYSTEM\sys\system_stm32f10x.h

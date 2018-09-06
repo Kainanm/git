@@ -1,0 +1,69 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.25.2.0
+Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: conan marcus, lkfjlaj, LIC=UB463-ALS04-16EQV-P8GQE-7GG93-DF7M1
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.25.2.0
+Toolchain Path:  E:\Keil_v525\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.25.2.0
+Dialog DLL:      DARMCM1.DLL V1.19.1.0
+Target DLL:      UL2CM3.DLL V1.160.12.0
+Dialog DLL:      TARMCM1.DLL V1.14.0.0
+ 
+<h2>Project:</h2>
+C:\Users\Conor\OneDrive - The University of Melbourne\PhD\stm32_keil4\arm_fir_example\arm_fir_example.uvprojx
+Project File Date:  07/12/2018
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'E:\Keil_v525\ARM\ARMCC\Bin'
+Rebuild target 'ARMCM0'
+compiling arm_fir_data.c...
+compiling arm_fir_example_f32.c...
+compiling math_helper.c...
+assembling startup_ARMCM0.s...
+compiling system_ARMCM0.c...
+linking...
+Program Size: Code=1452 RO-data=400 RW-data=4108 ZI-data=8468  
+".\ARMCM0_debug\arm_fir_example.axf" - 0 Error(s), 0 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.3.0.pack
+                ARM.CMSIS.5.3.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.1.1
+   * Component: DSP Version: 1.5.2
+   * Component: Startup Version: 1.0.1
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_ARMCM0
+  E:\Keil_v525\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include
+  E:\Keil_v525\ARM\PACK\ARM\CMSIS\5.3.0\Device\ARM\ARMCM0\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.1.1
+
+   * Component: ARM::CMSIS:DSP:1.5.2
+      Library file:  CMSIS\Lib\ARM\arm_cortexM0l_math.lib
+      Include file:  CMSIS\Include\arm_math.h
+
+   * Component: ARM::Device:Startup:1.0.1
+      Source file:   Device\ARM\ARMCM0\Source\system_ARMCM0.c
+      Include file:  Device\ARM\ARMCM0\Include\ARMCM0.h
+      Source file:   Device\ARM\ARMCM0\Source\ARM\startup_ARMCM0.s
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>

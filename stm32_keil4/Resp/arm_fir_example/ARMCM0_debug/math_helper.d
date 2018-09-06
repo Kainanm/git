@@ -1,0 +1,10 @@
+.\armcm0_debug\math_helper.o: math_helper.c
+.\armcm0_debug\math_helper.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\math.h
+.\armcm0_debug\math_helper.o: math_helper.h
+.\armcm0_debug\math_helper.o: E:\Keil_v525\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\arm_math.h
+.\armcm0_debug\math_helper.o: E:\Keil_v525\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm0.h
+.\armcm0_debug\math_helper.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\stdint.h
+.\armcm0_debug\math_helper.o: E:\Keil_v525\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h
+.\armcm0_debug\math_helper.o: E:\Keil_v525\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h
+.\armcm0_debug\math_helper.o: E:\Keil_v525\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h
+.\armcm0_debug\math_helper.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\string.h

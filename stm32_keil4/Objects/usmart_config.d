@@ -1,0 +1,14 @@
+.\objects\usmart_config.o: USMART\usmart_config.c
+.\objects\usmart_config.o: USMART\usmart.h
+.\objects\usmart_config.o: USMART\usmart_str.h
+.\objects\usmart_config.o: .\Exti\SYSTEM\sys\stm32f10x.h
+.\objects\usmart_config.o: .\Resp\arm_fft_bin_example\Include\core_cm3.h
+.\objects\usmart_config.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\usmart_config.o: .\Resp\arm_fft_bin_example\Include\cmsis_version.h
+.\objects\usmart_config.o: .\Resp\arm_fft_bin_example\Include\cmsis_compiler.h
+.\objects\usmart_config.o: .\Resp\arm_fft_bin_example\Include\cmsis_armcc.h
+.\objects\usmart_config.o: .\Exti\SYSTEM\sys\system_stm32f10x.h
+.\objects\usmart_config.o: .\Resp\Include\delay.h
+.\objects\usmart_config.o: .\Resp\Include\sys.h
+.\objects\usmart_config.o: .\Resp\Include\mpu6050.h
+.\objects\usmart_config.o: .\Resp\Include\mpuiic.h
