@@ -1,9 +1,7 @@
 // For mpu6050
 #include "sys.h"
 #include "delay.h"
-#include "usart.h" 
 #include "led.h" 		 	 
-#include "key.h"  
 #include "mpu6050.h"
 #include "usmart.h"   
 #include "inv_mpu.h"
@@ -13,32 +11,8 @@
 #include "resp_rate_cal.h"
 // For Extern interrupt
 #include "exti.h" 	
-  
 
-//串口1发送1个字符 
-//c:要发送的字符
-void usart1_send_char(u8 c)
-{
-	while((USART1->SR&0X40)==0);//等待上一次发送完毕   
-	USART1->DR=c;   	
-} 
-//传送数据给匿名四轴上位机软件(V2.6版本)
-//fun:功能字. 0XA0~0XAF
-//data:数据缓存区,最多28字节!!
-//len:data区有效数据个数
-void usart1_niming_report(u8 fun,u8*data,u8 len)
-{
-	u8 send_buf[32];
-	u8 i;
-	if(len>28)return;	//最多28字节数据 
-	send_buf[len+3]=0;	//校验数置零
-	send_buf[0]=0X88;	//帧头
-	send_buf[1]=fun;	//功能字
-	send_buf[2]=len;	//数据长度
-	for(i=0;i<len;i++)send_buf[3+i]=data[i];			//复制数据
-	for(i=0;i<len+3;i++)send_buf[len+3]+=send_buf[i];	//计算校验和	
-	for(i=0;i<len+4;i++)usart1_send_char(send_buf[i]);	//发送数据到串口1 
-}
+
 //发送加速度传感器数据和陀螺仪数据
 //aacx,aacy,aacz:x,y,z三个方向上面的加速度值
 //gyrox,gyroy,gyroz:x,y,z三个方向上面的陀螺仪值
@@ -57,16 +31,18 @@ void mpu6050_send_data(short aacx,short aacy,short aacz,short gyrox,short gyroy,
 	tbuf[9]=gyroy&0XFF;
 	tbuf[10]=(gyroz>>8)&0XFF;
 	tbuf[11]=gyroz&0XFF;
-	usart1_niming_report(0XA1,tbuf,12);//自定义帧,0XA1
 }	
 
 
 float breath_rate;
 float indata[ROW][COLUMN]; 
 void EXTI0_IRQHandler(void){
-	//IWDG_Feed(); // feed watchdog to avoid reset
-	breath_rate = resp_rate_cal(indata);
-	LED1 = 0;
+	//上升沿触发
+	delay_ms(10);	
+	if(LED1 == 1){
+		breath_rate = resp_rate_cal(indata);
+		LED1 = 0;
+	}
 	EXTI->PR=1<<0;  //清除LINE0上的中断标志位  
 }
 
@@ -80,11 +56,9 @@ int main(void)
  	float breath = 0;
 	// initiate others
 	Stm32_Clock_Init(9);		//系统时钟设置
-	uart_init(72,500000);		//串口初始化为500000
 	delay_init(72);	   	 		//延时初始化 
 	usmart_dev.init(72);		//初始化USMART
 	LED_Init();		  			//初始化与LED连接的硬件接口
-	KEY_Init();					//初始化按键
 	MPU_Init();					//初始化MPU6050
 		while(mpu_dmp_init()); // wait until mpu initialisation finished
 	EXTIX_Init();        // initiate extern interrupt
@@ -103,9 +77,9 @@ int main(void)
 			LED0 = !LED0;
 		}	
 		k++;
-		if(k % (BUFF_LEN) == 0){
+		if(k == BUFF_LEN){
 			k = 0;			
-			LED1 = 1; // activate interrupt									
+			LED1 = 1; // activate interrupt	by rising-edge trigger								
 		}   		
 	}	
 }

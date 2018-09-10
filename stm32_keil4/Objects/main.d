@@ -8,10 +8,7 @@
 .\objects\main.o: .\Resp\arm_fft_bin_example\Include\cmsis_armcc.h
 .\objects\main.o: .\Exti\SYSTEM\sys\system_stm32f10x.h
 .\objects\main.o: .\Resp\Include\delay.h
-.\objects\main.o: .\Resp\Include\usart.h
-.\objects\main.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\main.o: .\Resp\Include\led.h
-.\objects\main.o: .\Resp\Include\key.h
 .\objects\main.o: .\Resp\Include\mpu6050.h
 .\objects\main.o: .\Resp\Include\mpuiic.h
 .\objects\main.o: .\Resp\Include\usmart.h
@@ -19,6 +16,7 @@
 .\objects\main.o: .\Resp\Include\inv_mpu.h
 .\objects\main.o: .\Resp\Include\inv_mpu_dmp_motion_driver.h
 .\objects\main.o: .\Resp\parametre_define.h
+.\objects\main.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\main.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\main.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\math.h
 .\objects\main.o: .\Resp\resp_rate_cal.h

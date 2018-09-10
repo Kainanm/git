@@ -18,7 +18,7 @@
 #define LED0 PBout(5)	// DS0
 #define LED1 PEout(5)	// DS1	
 
-#define ACTINTR PCout(13)
+#define TRIG PCout(13)
 
 void LED_Init(void);	//≥ı ºªØ		 				    
 #endif
