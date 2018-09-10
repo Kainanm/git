@@ -434,12 +434,7 @@
             <File>
               <FileName>exti.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Exti\HARDWARE\EXTI\exti.c</FilePath>
-            </File>
-            <File>
-              <FileName>wdg.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\HARDWARE\WDG\wdg.c</FilePath>
+              <FilePath>.\HARDWARE\EXTI\exti.c</FilePath>
             </File>
           </Files>
         </Group>

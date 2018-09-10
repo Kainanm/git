@@ -20,13 +20,19 @@ float resp_rate_cal(float indata[ROW][COLUMN]){
 	int i,j;
 	float64_t var[ROW] = {0}; // to store the variances of input Eulerian angles in order of Pitch Yaw Roll
 	int max_index = 0; 
-	float *lpf_input = 0;
-	float *lpf_output = 0;
-	float *detrend_out = 0;
-	float *map_out = 0;
+	float *lpf_input;
+	float *lpf_output;
+	float *detrend_out;
+	float *map_out;
 	int sort_out[MAP_LENGTH] = {0};
-	float *freq_out = 0;
-	float breath_rate = 0;
+	float *freq_out;
+	float breath_rate;
+	
+	lpf_input = &indata[max_index][0]; // testInput is the pointer to the input of fun_lpf
+	lpf_output = &cell_1024[0];
+	detrend_out = &cell_1024[0];
+	map_out = &cell_2048[0];
+	freq_out = &cell_1024[0];
 	
 /// --------code start here---------
 	
@@ -44,9 +50,7 @@ float resp_rate_cal(float indata[ROW][COLUMN]){
 	max_index = AngLocDes(var, ROW);  
 
 	
-	// LPF
-	lpf_input = &indata[max_index][0]; // testInput is the pointer to the input of fun_lpf
-	lpf_output = &cell_1024[0];
+	// LPF	
 	fun_lpf(lpf_input, lpf_output); //the output is in testOutput, a global variable in arm_fir_example_f32.h
 	
 	// detrend
@@ -54,8 +58,7 @@ float resp_rate_cal(float indata[ROW][COLUMN]){
 	The input and outputo of detrend() can be the same,
 	coz the current output is not affected by former inputs.
 	The input and theoutput are both in detrend_out
-	----------------------------------------------------*/
-	detrend_out = &cell_1024[0];
+	----------------------------------------------------*/	
 	detrend(detrend_out, LENGTH); 
 	
 	// fft
@@ -76,7 +79,7 @@ float resp_rate_cal(float indata[ROW][COLUMN]){
 	* Pick up freuqency components of the signal between 0.2-1.25 Hz.
 	* The length of output is MAP_LENGTH
 	------------------------------------------*/
-	map_out = &cell_2048[0]; 
+	 
 	fun_map(testOutput_fft, map_out, LENGTH, HZ_LOWER, HZ_UPPER); 
 
 	
@@ -84,7 +87,6 @@ float resp_rate_cal(float indata[ROW][COLUMN]){
 	sortindex(map_out, sort_out, MAP_LENGTH);
 	
 	// fun_index2hz
-	freq_out = &cell_1024[0];
 	fun_index2hz(sort_out, freq_out, MAP_LENGTH, HZ_LOWER, HZ_UPPER);
 	
 	// GetBreathFreq	

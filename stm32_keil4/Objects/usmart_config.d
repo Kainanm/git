@@ -3,7 +3,7 @@
 .\objects\usmart_config.o: USMART\usmart_str.h
 .\objects\usmart_config.o: .\Exti\SYSTEM\sys\stm32f10x.h
 .\objects\usmart_config.o: .\Resp\arm_fft_bin_example\Include\core_cm3.h
-.\objects\usmart_config.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\usmart_config.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\usmart_config.o: .\Resp\arm_fft_bin_example\Include\cmsis_version.h
 .\objects\usmart_config.o: .\Resp\arm_fft_bin_example\Include\cmsis_compiler.h
 .\objects\usmart_config.o: .\Resp\arm_fft_bin_example\Include\cmsis_armcc.h

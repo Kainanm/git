@@ -4,7 +4,7 @@
 #include "key.h"
 #include "beep.h"
 //#include "resp_rate_cal.h"
-#include "parametre_define.h"
+//#include "parametre_define.h"
 //////////////////////////////////////////////////////////////////////////////////	 
 //本程序只供学习使用，未经作者许可，不得用于其它任何用途
 //ALIENTEK战舰STM32开发板V3
@@ -18,16 +18,16 @@
 //All rights reserved									  
 //////////////////////////////////////////////////////////////////////////////////   
 //外部中断0服务程序
-float indata[ROW][COLUMN];
-float breath_rate;
 
-void EXTI0_IRQHandler(void)
-{
-	//IWDG_Feed(); // feed watchdog to avoid reset
-	//breath_rate = resp_rate_cal(indata);
-	LED1 = 0;
-	EXTI->PR=1<<0;  //清除LINE0上的中断标志位  
-}
+//float breath_rate;
+
+//void EXTI0_IRQHandler(void)
+//{
+//	//IWDG_Feed(); // feed watchdog to avoid reset
+//	breath_rate = resp_rate_cal(indata);
+//	LED1 = 0;
+//	EXTI->PR=1<<0;  //清除LINE0上的中断标志位  
+//}
 //外部中断2服务程序
 void EXTI2_IRQHandler(void)
 {
