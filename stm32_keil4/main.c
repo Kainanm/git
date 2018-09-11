@@ -39,10 +39,10 @@ float indata[ROW][COLUMN];
 void EXTI0_IRQHandler(void){
 	//上升沿触发
 	delay_ms(10);	
-	if(LED1 == 1){
-		breath_rate = resp_rate_cal(indata);
-		LED1 = 0;
-	}
+	//if(LED1 == 1){
+		//breath_rate = resp_rate_cal(indata);
+		LED0 = !LED0;
+	//}
 	EXTI->PR=1<<0;  //清除LINE0上的中断标志位  
 }
 
@@ -62,8 +62,7 @@ int main(void)
 	MPU_Init();					//初始化MPU6050
 		while(mpu_dmp_init()); // wait until mpu initialisation finished
 	EXTIX_Init();        // initiate extern interrupt
-	//IWDG_Init(6,4096);    	// initiate the watch dog, TTL = 60000 ms	
-	
+		
 	while(1){		
 			if(mpu_dmp_get_data(&pitch,&roll,&yaw)==0){ // fucntion returns 0 when get eularian angles
 			for(i = 0; i < ROW; i++){\
@@ -74,12 +73,13 @@ int main(void)
 			indata[0][LENGTH-1] = pitch;
 			indata[1][LENGTH-1] = yaw;
 			indata[2][LENGTH-1] = roll;
-			LED0 = !LED0;
 		}	
 		k++;
 		if(k == BUFF_LEN){
 			k = 0;			
 			LED1 = 1; // activate interrupt	by rising-edge trigger								
+			LED1 = 0;
+			// LED1 = !LED1;
 		}   		
 	}	
 }
