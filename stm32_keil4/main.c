@@ -40,21 +40,19 @@ void EXTI0_IRQHandler(void){
 	//上升沿触发
 	delay_ms(10);	
 	//if(LED1 == 1){
-		//breath_rate = resp_rate_cal(indata);
+	//breath_rate = resp_rate_cal(indata);
 		LED0 = !LED0;
+		//LED0 = !LED0;
 	//}
 	EXTI->PR=1<<0;  //清除LINE0上的中断标志位  
 }
 
-int main(void)
-{		
-	unsigned int k=0;			// for periodic counting of resp_rate_cal
-	u8 t;                 // for periodic reading of MPU6050
+int main(void){		
+	u8 k=0;			// for periodic counting of resp_rate_cal
+	u8 t=0;                 // for periodic reading of MPU6050
 	int i=0, j=0;
-	short temp;		
 	LED1 = 0;	
 	float pitch,roll,yaw; 		//欧拉角	
- 	float breath = 0;
 	// initiate others
 	Stm32_Clock_Init(9);		//系统时钟设置
 	delay_init(72);	   	 		//延时初始化 
@@ -65,17 +63,24 @@ int main(void)
 	//EXTIX_Init();        // initiate extern interrupt
 		
 	while(1){		
-		if(mpu_dmp_get_data(&pitch,&roll,&yaw)==0){ // fucntion returns 0 when get eularian angles
-			for(i = 0; i < ROW; i++){
-				for(j = 1; j < LENGTH; j++){				
-					indata[i][j-1] = indata[i][j];
+		if(mpu_dmp_get_data(&pitch,&roll,&yaw)==0){ 
+			// The actual sample rate of MPU6050 is actually 8.33Hz 
+			// (= 100/((u8)100/SAMP_RATE)), in parametre_define.h
+			t++;
+			if(t == MPU_DVDR){
+				t = 0;
+				for(i = 0; i < ROW; i++){
+					for(j = 1; j < LENGTH; j++){				
+						indata[i][j-1] = indata[i][j];
+					}
 				}
+				indata[0][LENGTH-1] = pitch;
+				indata[1][LENGTH-1] = yaw;
+				indata[2][LENGTH-1] = roll;
+				//LED0 = !LED0;
+				//LED0 = !LED0;
+				k++;
 			}
-			indata[0][LENGTH-1] = pitch;
-			indata[1][LENGTH-1] = yaw;
-			indata[2][LENGTH-1] = roll;
-			LED0 = !LED0;
-			k++;
 		}	
 		
 		if(k == BUFF_LEN){
