@@ -16,8 +16,6 @@
 .\objects\main.o: .\Resp\Include\inv_mpu.h
 .\objects\main.o: .\Resp\Include\inv_mpu_dmp_motion_driver.h
 .\objects\main.o: .\Resp\parametre_define.h
-.\objects\main.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\main.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\main.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\math.h
 .\objects\main.o: .\Resp\resp_rate_cal.h
 .\objects\main.o: .\Resp\parametre_define.h

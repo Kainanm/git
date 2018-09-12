@@ -48,7 +48,8 @@ void EXTI0_IRQHandler(void){
 
 int main(void)
 {		
-	unsigned int k=0;			// for periodic counting
+	unsigned int k=0;			// for periodic counting of resp_rate_cal
+	u8 t;                 // for periodic reading of MPU6050
 	int i=0, j=0;
 	short temp;		
 	LED1 = 0;	
@@ -61,11 +62,11 @@ int main(void)
 	LED_Init();		  			//初始化与LED连接的硬件接口
 	MPU_Init();					//初始化MPU6050
 		while(mpu_dmp_init()); // wait until mpu initialisation finished
-	EXTIX_Init();        // initiate extern interrupt
+	//EXTIX_Init();        // initiate extern interrupt
 		
 	while(1){		
-			if(mpu_dmp_get_data(&pitch,&roll,&yaw)==0){ // fucntion returns 0 when get eularian angles
-			for(i = 0; i < ROW; i++){\
+		if(mpu_dmp_get_data(&pitch,&roll,&yaw)==0){ // fucntion returns 0 when get eularian angles
+			for(i = 0; i < ROW; i++){
 				for(j = 1; j < LENGTH; j++){				
 					indata[i][j-1] = indata[i][j];
 				}
@@ -73,13 +74,14 @@ int main(void)
 			indata[0][LENGTH-1] = pitch;
 			indata[1][LENGTH-1] = yaw;
 			indata[2][LENGTH-1] = roll;
+			LED0 = !LED0;
+			k++;
 		}	
-		k++;
+		
 		if(k == BUFF_LEN){
 			k = 0;			
 			LED1 = 1; // activate interrupt	by rising-edge trigger								
 			LED1 = 0;
-			// LED1 = !LED1;
 		}   		
 	}	
 }

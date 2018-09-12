@@ -13,5 +13,4 @@
 .\objects\mpu6050.o: .\Resp\Include\usart.h
 .\objects\mpu6050.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\mpu6050.o: .\Resp\parametre_define.h
-.\objects\mpu6050.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\mpu6050.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\math.h

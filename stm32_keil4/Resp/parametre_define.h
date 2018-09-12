@@ -1,13 +1,12 @@
-#include <stdio.h>  
-#include <stdlib.h>  
 #include <math.h>  
+#include "sys.h"
 
 #define LENGTH 512 // length of input signal
 #define ROW 3
 #define COLUMN LENGTH
 #define SAMP_RATE 8.0
 #define BUFF_LEN 128
-#define MPU_RATE (int)SAMP_RATE // the sample rate of MPU6050, 4-1000 hz
+#define MPU_RATE (u16)SAMP_RATE // the sample rate of MPU6050, 4-1000 hz
 
 //#define SRAM 0x2000e000 // SRAM starts from 0x2000e000 in STM32F103ZET6
 
