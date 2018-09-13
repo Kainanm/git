@@ -38,9 +38,9 @@ float breath_rate;
 float indata[ROW][COLUMN]; 
 void EXTI0_IRQHandler(void){
 	//上升沿触发
-	delay_ms(10);	
+	delay_ms(10); // To avoid level jitter
 	if(LED1 == 1){
-	//breath_rate = resp_rate_cal(indata);
+		breath_rate = resp_rate_cal(indata);
 		LED0 = !LED0;
 	}
 	EXTI->PR=1<<0;  //清除LINE0上的中断标志位  
