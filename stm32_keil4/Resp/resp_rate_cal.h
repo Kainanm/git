@@ -26,7 +26,7 @@ float resp_rate_cal(float indata[ROW][COLUMN]){
 	float *map_out;
 	int sort_out[MAP_LENGTH] = {0};
 	float *freq_out;
-	float breath_rate;
+	float breath_rate = 10.2;
 	
 	lpf_input = &indata[max_index][0]; // testInput is the pointer to the input of fun_lpf
 	lpf_output = &cell_1024[0];
@@ -66,6 +66,8 @@ float resp_rate_cal(float indata[ROW][COLUMN]){
 	* testIntput_fft has 2048 numbers. Even positions are for real parts 
 	* and odd positions are for imaginary parts, which are 0 in this case.
 	----------------------------------------------------------------*/
+	
+	/*
 	j = 0;
 	for(i=0;i<TEST_LENGTH_SAMPLES;i=i+2){
 		testInput_fft[i] = detrend_out[j]; // *testInput_fft is defined in arm_fft_bin_example_f32.h
@@ -73,14 +75,17 @@ float resp_rate_cal(float indata[ROW][COLUMN]){
 		j++;
 	}
 	arm_fft(); // The output is in testOutput_fft in arm_fft_bin_example_f32.h
+	*/
 	
 	// fun_map. 
 	/*-----------------------------------------
 	* Pick up freuqency components of the signal between 0.2-1.25 Hz.
 	* The length of output is MAP_LENGTH
 	------------------------------------------*/
-	 
-	fun_map(testOutput_fft, map_out, LENGTH, HZ_LOWER, HZ_UPPER); 
+	float *map_in;
+	map_in = &cell_1024[0];
+	// fun_map(testOutput_fft, map_out, LENGTH, HZ_LOWER, HZ_UPPER); 
+	fun_map(map_in, map_out, LENGTH, HZ_LOWER, HZ_UPPER);
 
 	
 	// sort

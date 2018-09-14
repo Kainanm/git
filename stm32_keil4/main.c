@@ -82,7 +82,6 @@ int main(void){
 		
 		if(k == BUFF_LEN/2){
 			LED1 = !LED1;
-			//LED1 = 1; // activate interrupt	by rising-edge trigger	
 			k = 0;				
 		}   		
 	}	
