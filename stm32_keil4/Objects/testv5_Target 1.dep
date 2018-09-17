@@ -1,13 +1,5 @@
 Dependencies for Project 'testv5', Target 'Target 1': (DO NOT MODIFY !)
-<<<<<<< HEAD
-<<<<<<< HEAD
-F (.\main.c)(0x5B9FA4F4)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Resp -I .\Resp\arm_fft_bin_example -I .\Resp\arm_fir_example -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\BEEP -I ..\HARDWARE\KEY -I ..\HARDWARE\EXTI -I ..\HARDWARE\WDG -I ..\HARDWARE\TIMER -I ..\HARDWARE\TPAD -I ..\HARDWARE\OLED -I ..\HARDWARE\LCD -I ..\HARDWARE\RTC -I ..\HARDWARE\WKUP -I ..\HARDWARE\ADC -I ..\HARDWARE\LSENS -I ..\HARDWARE\DAC -I ..\HARDWARE\DMA -I ..\HARDWARE\24CXX -I ..\HARDWARE\SPI -I ..\HARDWARE\W25QXX -I ..\HARDWARE\RS485 -I ..\HARDWARE\CAN -I ..\HARDWARE\TOUCH -I ..\HARDWARE\REMOTE -I ..\HARDWARE\JOYPAD -I ..\HARDWARE\DS18B20 -I ..\HARDWARE\DHT11 -I ..\HARDWARE\MPU6050 -I ..\HARDWARE\MPU6050\eMPL -I ..\USMART -I .\Resp\Include -I .\Exti\HARDWARE\BEEP -I .\Exti\HARDWARE\EXTI -I .\Exti\HARDWARE\KEY -I .\Exti\HARDWARE\LED -I .\Exti\SYSTEM\delay -I .\Exti\SYSTEM\sys -I .\Exti\SYSTEM\usart -I .\Resp\arm_fft_bin_example\Include -I .\Resp\arm_fir_example\Include -I .\HARDWARE\WDG-I.\RTE\_Target_1-IE:\Keil_v525\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IE:\Keil_v525\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DARM_MATH_CM7 -DARM_MATH_CM4 -DARM_MATH_CM3 -DARM_MATH_CM0PLUS -DARM_MATH_CM0 -DARM_MATH_ARMV8MBL -DARM_MATH_ARMV8MML-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
-=======
-F (.\main.c)(0x5B9F69C5)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Resp -I .\Resp\arm_fft_bin_example -I .\Resp\arm_fir_example -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\BEEP -I ..\HARDWARE\KEY -I ..\HARDWARE\EXTI -I ..\HARDWARE\WDG -I ..\HARDWARE\TIMER -I ..\HARDWARE\TPAD -I ..\HARDWARE\OLED -I ..\HARDWARE\LCD -I ..\HARDWARE\RTC -I ..\HARDWARE\WKUP -I ..\HARDWARE\ADC -I ..\HARDWARE\LSENS -I ..\HARDWARE\DAC -I ..\HARDWARE\DMA -I ..\HARDWARE\24CXX -I ..\HARDWARE\SPI -I ..\HARDWARE\W25QXX -I ..\HARDWARE\RS485 -I ..\HARDWARE\CAN -I ..\HARDWARE\TOUCH -I ..\HARDWARE\REMOTE -I ..\HARDWARE\JOYPAD -I ..\HARDWARE\DS18B20 -I ..\HARDWARE\DHT11 -I ..\HARDWARE\MPU6050 -I ..\HARDWARE\MPU6050\eMPL -I ..\USMART -I .\Resp\Include -I .\Exti\HARDWARE\BEEP -I .\Exti\HARDWARE\EXTI -I .\Exti\HARDWARE\KEY -I .\Exti\HARDWARE\LED -I .\Exti\SYSTEM\delay -I .\Exti\SYSTEM\sys -I .\Exti\SYSTEM\usart -I .\Resp\arm_fft_bin_example\Include -I .\Resp\arm_fir_example\Include -I .\HARDWARE\WDG-I.\RTE\_Target_1-IE:\Keil_v525\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IE:\Keil_v525\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DARM_MATH_CM7 -DARM_MATH_CM4 -DARM_MATH_CM3 -DARM_MATH_CM0PLUS -DARM_MATH_CM0 -DARM_MATH_ARMV8MBL -DARM_MATH_ARMV8MML-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
->>>>>>> master
-=======
-F (.\main.c)(0x5B9A390F)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Resp -I .\Resp\arm_fft_bin_example -I .\Resp\arm_fir_example -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\BEEP -I ..\HARDWARE\KEY -I ..\HARDWARE\EXTI -I ..\HARDWARE\WDG -I ..\HARDWARE\TIMER -I ..\HARDWARE\TPAD -I ..\HARDWARE\OLED -I ..\HARDWARE\LCD -I ..\HARDWARE\RTC -I ..\HARDWARE\WKUP -I ..\HARDWARE\ADC -I ..\HARDWARE\LSENS -I ..\HARDWARE\DAC -I ..\HARDWARE\DMA -I ..\HARDWARE\24CXX -I ..\HARDWARE\SPI -I ..\HARDWARE\W25QXX -I ..\HARDWARE\RS485 -I ..\HARDWARE\CAN -I ..\HARDWARE\TOUCH -I ..\HARDWARE\REMOTE -I ..\HARDWARE\JOYPAD -I ..\HARDWARE\DS18B20 -I ..\HARDWARE\DHT11 -I ..\HARDWARE\MPU6050 -I ..\HARDWARE\MPU6050\eMPL -I ..\USMART -I .\Resp\Include -I .\Exti\HARDWARE\BEEP -I .\Exti\HARDWARE\EXTI -I .\Exti\HARDWARE\KEY -I .\Exti\HARDWARE\LED -I .\Exti\SYSTEM\delay -I .\Exti\SYSTEM\sys -I .\Exti\SYSTEM\usart -I .\Resp\arm_fft_bin_example\Include -I .\Resp\arm_fir_example\Include -I .\HARDWARE\WDG-I.\RTE\_Target_1-IE:\Keil_v525\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IE:\Keil_v525\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DARM_MATH_CM7 -DARM_MATH_CM4 -DARM_MATH_CM3 -DARM_MATH_CM0PLUS -DARM_MATH_CM0 -DARM_MATH_ARMV8MBL -DARM_MATH_ARMV8MML-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
->>>>>>> parent of 3989e78... origin
+F (.\main.c)(0x5B9FA6C8)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Resp -I .\Resp\arm_fft_bin_example -I .\Resp\arm_fir_example -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HARDWARE\LED -I ..\HARDWARE\BEEP -I ..\HARDWARE\KEY -I ..\HARDWARE\EXTI -I ..\HARDWARE\WDG -I ..\HARDWARE\TIMER -I ..\HARDWARE\TPAD -I ..\HARDWARE\OLED -I ..\HARDWARE\LCD -I ..\HARDWARE\RTC -I ..\HARDWARE\WKUP -I ..\HARDWARE\ADC -I ..\HARDWARE\LSENS -I ..\HARDWARE\DAC -I ..\HARDWARE\DMA -I ..\HARDWARE\24CXX -I ..\HARDWARE\SPI -I ..\HARDWARE\W25QXX -I ..\HARDWARE\RS485 -I ..\HARDWARE\CAN -I ..\HARDWARE\TOUCH -I ..\HARDWARE\REMOTE -I ..\HARDWARE\JOYPAD -I ..\HARDWARE\DS18B20 -I ..\HARDWARE\DHT11 -I ..\HARDWARE\MPU6050 -I ..\HARDWARE\MPU6050\eMPL -I ..\USMART -I .\Resp\Include -I .\Exti\HARDWARE\BEEP -I .\Exti\HARDWARE\EXTI -I .\Exti\HARDWARE\KEY -I .\Exti\HARDWARE\LED -I .\Exti\SYSTEM\delay -I .\Exti\SYSTEM\sys -I .\Exti\SYSTEM\usart -I .\Resp\arm_fft_bin_example\Include -I .\Resp\arm_fir_example\Include -I .\HARDWARE\WDG-I.\RTE\_Target_1-IE:\Keil_v525\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IE:\Keil_v525\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_HD -DSTM32F10X_HD -DARM_MATH_CM7 -DARM_MATH_CM4 -DARM_MATH_CM3 -DARM_MATH_CM0PLUS -DARM_MATH_CM0 -DARM_MATH_ARMV8MBL -DARM_MATH_ARMV8MML-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (.\Resp\Include\sys.h)(0x5B8DE3EB)
 I (.\Exti\SYSTEM\sys\stm32f10x.h)(0x4F1E2E3C)
 I (.\Resp\arm_fft_bin_example\Include\core_cm3.h)(0x5A8E1FE2)
@@ -26,32 +18,16 @@ I (.\Resp\Include\inv_mpu.h)(0x54B9E068)
 I (.\Resp\Include\inv_mpu_dmp_motion_driver.h)(0x50CA9A0C)
 I (.\Resp\parametre_define.h)(0x5B9A32B9)
 I (E:\Keil_v525\ARM\ARMCC\include\math.h)(0x599ECD2E)
-<<<<<<< HEAD
-<<<<<<< HEAD
-I (.\Resp\resp_rate_cal.h)(0x5B9FA42F)
-=======
-<<<<<<< HEAD
-I (.\Resp\resp_rate_cal.h)(0x5B9F69CB)
-=======
-I (.\Resp\resp_rate_cal.h)(0x5B9B56E3)
->>>>>>> parent of 6371014... Wierd
->>>>>>> master
-=======
-I (.\Resp\resp_rate_cal.h)(0x5B9F4402)
->>>>>>> parent of 3989e78... origin
+I (.\Resp\resp_rate_cal.h)(0x5B9FA8FE)
 I (.\Resp\GetVariance.h)(0x5B4C6232)
 I (.\Resp\AngLocDes.h)(0x5B67013C)
-I (.\Resp\arm_fir_example_f32.h)(0x5B9B53AC)
+I (.\Resp\arm_fir_example_f32.h)(0x5B9FA8FD)
 I (.\Resp\arm_fft_bin_example\Include\arm_math.h)(0x5A8E1FE2)
 I (.\Resp\arm_fft_bin_example\Include\core_cm7.h)(0x5A8E1FE2)
 I (E:\Keil_v525\ARM\ARMCC\include\string.h)(0x599ECD2C)
 I (.\Resp\arm_fir_example\math_helper.h)(0x5A55A9A8)
 I (.\Resp\detrend.h)(0x5B767158)
-<<<<<<< HEAD
-I (.\Resp\arm_fft_bin_example_f32.h)(0x5B9F42DA)
-=======
-I (.\Resp\arm_fft_bin_example_f32.h)(0x5B9B4E92)
->>>>>>> master
+I (.\Resp\arm_fft_bin_example_f32.h)(0x5B9FA8FD)
 I (.\Resp\arm_fft_bin_example\Include\arm_const_structs.h)(0x5A55A9A4)
 I (.\Resp\arm_fft_bin_example\Include\arm_common_tables.h)(0x5A601986)
 I (.\Resp\fun_map.h)(0x5B4C4762)

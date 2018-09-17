@@ -76,29 +76,8 @@ int main(void){
 	EXTIX_Init();        // initiate extern interrupt
 		
 	while(1){		
-<<<<<<< HEAD
 		LED1 = !LED1; // rising-edge triggering interrupt
 		breath_rate = resp_rate_cal(indata);
-=======
-		if(mpu_dmp_get_data(&pitch,&roll,&yaw)==0){ 
-			// The actual sample rate of MPU6050 is actually 8.33Hz 
-			// (= 100/((u8)100/SAMP_RATE)), in parametre_define.h
-			t++;
-			if(t == MPU_DVDR){
-				t = 0;
-				for(i = 0; i < ROW; i++){
-					for(j = 1; j < LENGTH; j++){				
-						indata[i][j-1] = indata[i][j];
-					}
-				}
-				indata[0][LENGTH-1] = pitch;
-				indata[1][LENGTH-1] = yaw;
-				indata[2][LENGTH-1] = roll;
-				k++;
-			}
-		}	
-		
->>>>>>> parent of 3989e78... origin
 		if(k == BUFF_LEN/2){
 			LED1 = !LED1;
 			k = 0;				

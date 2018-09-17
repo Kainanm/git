@@ -48,64 +48,42 @@ compiling main.c...
       *pIalpha = __QSUB(product1, product2);
 .\Resp\arm_fft_bin_example\Include\arm_math.h(5347): warning:  #223-D: function "__QADD" declared implicitly
       *pIbeta = __QADD(product4, product3);
-.\Resp\arm_fft_bin_example_f32.h(87): warning:  #550-D: variable "status"  was set but never used
+.\Resp\arm_fft_bin_example_f32.h(126): warning:  #550-D: variable "status"  was set but never used
     arm_status status;
-<<<<<<< HEAD
-.\Resp\resp_rate_cal.h(24): error:  #29: expected an expression
+.\Resp\arm_fft_bin_example_f32.h(127): warning:  #177-D: variable "maxValue"  was declared but never referenced
+    float32_t maxValue;
+.\Resp\resp_rate_cal.h(37): error:  #29: expected an expression
   <<<<<<< HEAD
-.\Resp\resp_rate_cal.h(57): warning:  #9-D: nested comment is not allowed
-  	/*---------------------------------------------------
-.\Resp\resp_rate_cal.h(62): warning:  #12-D: parsing restarts here after previous syntax error
-  	float *detrend_out;
-.\Resp\resp_rate_cal.h(63): error:  #20: identifier "detrend_out" is undefined
-  	detrend_out = &cell_1024[0];
-.\Resp\resp_rate_cal.h(65): error:  #29: expected an expression
-  	*/
-.\Resp\resp_rate_cal.h(75): warning:  #12-D: parsing restarts here after previous syntax error
-  	float *detrend_out;
-.\Resp\resp_rate_cal.h(77): error:  #29: expected an expression
-  >>>>>>> parent of 3989e78... origin
-.\Resp\resp_rate_cal.h(77): error:  #19: extra text after expected end of number
-  >>>>>>> parent of 3989e78... origin
-.\Resp\resp_rate_cal.h(90): error:  #29: expected an expression
+.\Resp\resp_rate_cal.h(43): warning:  #12-D: parsing restarts here after previous syntax error
+  	float64_t var[ROW] = {0}; // to store the variances of input Eulerian angles in order of Pitch Yaw Roll
+.\Resp\resp_rate_cal.h(44): error:  #29: expected an expression
+  =======
+.\Resp\resp_rate_cal.h(53): error:  #19: extra text after expected end of number
+  >>>>>>> parent of 72d442d... continue to debug fft
+.\Resp\resp_rate_cal.h(59): warning:  #12-D: parsing restarts here after previous syntax error
+  	max_index = AngLocDes(var, ROW);  
+.\Resp\resp_rate_cal.h(66): error:  #29: expected an expression
   <<<<<<< HEAD
-.\Resp\resp_rate_cal.h(96): warning:  #9-D: nested comment is not allowed
-  	/*-----------------------------------------
-.\Resp\resp_rate_cal.h(100): warning:  #12-D: parsing restarts here after previous syntax error
-  	float *map_in;
-.\Resp\resp_rate_cal.h(101): error:  #20: identifier "map_in" is undefined
-  	map_in = &cell_1024[0];
-.\Resp\resp_rate_cal.h(119): error:  #29: expected an expression
-  <<<<<<< HEAD
-.\Resp\resp_rate_cal.h(123): error:  #19: extra text after expected end of number
-  >>>>>>> parent of 3989e78... origin
-.\Resp\resp_rate_cal.h(124): warning:  #12-D: parsing restarts here after previous syntax error
-  	return breath_rate;
-.\Resp\resp_rate_cal.h(126): warning:  #940-D: missing return statement at end of non-void function "resp_rate_cal" 
-  }
-.\Resp\resp_rate_cal.h(21): warning:  #550-D: variable "breath_rate"  was set but never used
-  	float breath_rate = 5.2;
+.\Resp\resp_rate_cal.h(73): error:  #29: expected an expression
+  =======
+.\Resp\resp_rate_cal.h(79): warning:  #12-D: parsing restarts here after previous syntax error
+  	detrend(detrend_out, LENGTH); 
+.\Resp\resp_rate_cal.h(125): error:  #29: expected an expression
+  >>>>>>> parent of 72d442d... continue to debug fft
+.\Resp\resp_rate_cal.h(125): error:  #19: extra text after expected end of number
+  >>>>>>> parent of 72d442d... continue to debug fft
+.\Resp\resp_rate_cal.h(129): warning:  #12-D: parsing restarts here after previous syntax error
+  	sortindex(map_out, sort_out, MAP_LENGTH);
+.\Resp\resp_rate_cal.h(20): warning:  #177-D: variable "i"  was declared but never referenced
+  	int i,j;
+.\Resp\resp_rate_cal.h(20): warning:  #177-D: variable "j"  was declared but never referenced
+  	int i,j;
+.\Resp\resp_rate_cal.h(21): warning:  #177-D: variable "var"  was declared but never referenced
+  	float64_t var[ROW] = {0}; // to store the variances of input Eulerian angles in order of Pitch Yaw Roll
 main.c(21): warning:  #550-D: variable "tbuf"  was set but never used
   	u8 tbuf[12]; 
-<<<<<<< HEAD
-main.c: 20 warnings, 9 errors
-".\Objects\testv5.axf" - 9 Error(s), 20 Warning(s).
-=======
-main.c(21): warning:  #550-D: variable "tbuf"  was set but never used
-  	u8 tbuf[12]; 
-main.c: 12 warnings, 0 errors
-linking...
-Program Size: Code=35704 RO-data=15924 RW-data=416 ZI-data=13192  
-FromELF: creating hex file...
-".\Objects\testv5.axf" - 0 Error(s), 12 Warning(s).
->>>>>>> master
-=======
-main.c: 12 warnings, 0 errors
-linking...
-Program Size: Code=31632 RO-data=15844 RW-data=416 ZI-data=13192  
-FromELF: creating hex file...
-".\Objects\testv5.axf" - 0 Error(s), 12 Warning(s).
->>>>>>> parent of 3989e78... origin
+main.c: 20 warnings, 7 errors
+".\Objects\testv5.axf" - 7 Error(s), 20 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -138,19 +116,16 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.1.1
 
    * Component: ARM::CMSIS:DSP:1.5.2
-      Library file:  CMSIS\Lib\ARM\arm_cortexM3l_math.lib
       Include file:  CMSIS\Include\arm_math.h
+      Library file:  CMSIS\Lib\ARM\arm_cortexM3l_math.lib
 
    * Component: Keil.ARM Compiler::Compiler:I/O:STDIN:Breakpoint:1.4.0
       Source file:   Source\retarget_io.c
 
    * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:Breakpoint:1.4.0
       Source file:   Source\retarget_io.c
-<<<<<<< HEAD
 Target not created.
-=======
->>>>>>> master
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>
