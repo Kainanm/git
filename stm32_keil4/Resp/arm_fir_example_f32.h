@@ -132,9 +132,8 @@ const float firCoeffs32[NUM_TAPS] =
  * FIR LPF Example
  * ------------------------------------------------------------------- */
 
-int32_t fun_lpf(float32_t *testInput, float32_t *testOutput)
+int32_t fun_lpf(float32_t *testInput, float32_t *testOutput){
 	// input stores in testInput and output stores in testOutput 
-{
   uint32_t i;
   arm_fir_instance_f32 S;
   float32_t  *inputF32, *outputF32;

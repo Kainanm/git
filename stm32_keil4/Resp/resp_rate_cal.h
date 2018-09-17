@@ -17,22 +17,8 @@ static float32_t cell_1024[TEST_LENGTH_SAMPLES_FFT/2];
 
 float resp_rate_cal(float indata[ROW][COLUMN]){	      
 /// state variables
-	int i,j;
-	float64_t var[ROW] = {0}; // to store the variances of input Eulerian angles in order of Pitch Yaw Roll
-	int max_index = 0; 
-	float *lpf_input;
-	float *lpf_output;
-	float *detrend_out;
-	float *map_out;
-	int sort_out[MAP_LENGTH] = {0};
-	float *freq_out;
-	float breath_rate = 10.2;
-	
-	lpf_input = &indata[max_index][0]; // testInput is the pointer to the input of fun_lpf
-	lpf_output = &cell_1024[0];
-	detrend_out = &cell_1024[0];
-	map_out = &cell_2048[0];
-	freq_out = &cell_1024[0];
+	int i,j;	
+	float breath_rate = 5.2;
 	
 /// --------code start here---------
 	
@@ -42,15 +28,20 @@ float resp_rate_cal(float indata[ROW][COLUMN]){
 	* if there are too many or too large inputs.
 	* Check it before run.
 	-----------------------------------------------*/
+	float64_t var[ROW] = {0}; // to store the variances of input Eulerian angles in order of Pitch Yaw Roll
 	for(i=0;i<ROW;i++){
 		var[i] = GetVariane(indata[i], LENGTH);
 	}
 	
 	// Find the max angle variance
+	int max_index = 0;
 	max_index = AngLocDes(var, ROW);  
-
 	
 	// LPF	
+	float *lpf_input;
+	float *lpf_output;
+	lpf_input = &indata[max_index][0]; // testInput is the pointer to the input of fun_lpf
+	lpf_output = &cell_1024[0];
 	fun_lpf(lpf_input, lpf_output); //the output is in testOutput, a global variable in arm_fir_example_f32.h
 	
 	// detrend
@@ -59,6 +50,8 @@ float resp_rate_cal(float indata[ROW][COLUMN]){
 	coz the current output is not affected by former inputs.
 	The input and theoutput are both in detrend_out
 	----------------------------------------------------*/	
+	float *detrend_out;
+	detrend_out = &cell_1024[0];
 	detrend(detrend_out, LENGTH); 
 	
 	// fft
@@ -66,16 +59,18 @@ float resp_rate_cal(float indata[ROW][COLUMN]){
 	* testIntput_fft has 2048 numbers. Even positions are for real parts 
 	* and odd positions are for imaginary parts, which are 0 in this case.
 	----------------------------------------------------------------*/
-	
-	/*
 	j = 0;
 	for(i=0;i<TEST_LENGTH_SAMPLES;i=i+2){
-		testInput_fft[i] = detrend_out[j]; // *testInput_fft is defined in arm_fft_bin_example_f32.h
-		testInput_fft[i+1] = 0;
+		cell_2048[i] = cell_1024[j]; 
+		cell_2048[i+1] = 0;
 		j++;
 	}
-	arm_fft(); // The output is in testOutput_fft in arm_fft_bin_example_f32.h
-	*/
+	float *fft_input; 
+	fft_input = &cell_2048[0];
+	float *fft_output;
+	fft_output = &cell_1024[0];
+	arm_fft(fft_input, fft_output); // The output is in testOutput_fft in arm_fft_bin_example_f32.h
+	
 	
 	// fun_map. 
 	/*-----------------------------------------
@@ -84,14 +79,19 @@ float resp_rate_cal(float indata[ROW][COLUMN]){
 	------------------------------------------*/
 	float *map_in;
 	map_in = &cell_1024[0];
-	// fun_map(testOutput_fft, map_out, LENGTH, HZ_LOWER, HZ_UPPER); 
-	fun_map(map_in, map_out, LENGTH, HZ_LOWER, HZ_UPPER);
+	float *map_out;
+	map_out = &cell_2048[0];
+	fun_map(map_in, map_out, LENGTH, HZ_LOWER, HZ_UPPER); 
+	// fun_map(fft_output, map_out, LENGTH, HZ_LOWER, HZ_UPPER);
 
 	
 	// sort
+	int sort_out[MAP_LENGTH] = {0};
 	sortindex(map_out, sort_out, MAP_LENGTH);
 	
 	// fun_index2hz
+	float *freq_out;
+	freq_out = &cell_1024[0];
 	fun_index2hz(sort_out, freq_out, MAP_LENGTH, HZ_LOWER, HZ_UPPER);
 	
 	// GetBreathFreq	
