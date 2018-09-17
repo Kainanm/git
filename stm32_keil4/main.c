@@ -36,23 +36,37 @@ void mpu6050_send_data(short aacx,short aacy,short aacz,short gyrox,short gyroy,
 
 float breath_rate;
 float indata[ROW][COLUMN]; 
+unsigned int k = 0;			// for periodic counting of resp_rate_cal
+float pitch,roll,yaw; 		//欧拉角	
 void EXTI0_IRQHandler(void){
-	//上升沿触发
-	delay_ms(10); // To avoid level jitter
-	if(LED1 == 1){
-		breath_rate = resp_rate_cal(indata);
+	//上升沿触发	
+	u8 t = 0;                 // for periodic reading of MPU6050
+	int i = 0, j = 0;
+	if(mpu_dmp_get_data(&pitch,&roll,&yaw)==0){ 
+		// The actual sample rate of MPU6050 is actually 8.33Hz 
+		// (= 100/((u8)100/SAMP_RATE)), in parametre_define.h
+		t++;
+		if(t == MPU_DVDR){
+			t = 0;
+			for(i = 0; i < ROW; i++){
+				for(j = 1; j < LENGTH; j++){				
+					indata[i][j-1] = indata[i][j];
+				}
+			}
+			indata[0][LENGTH-1] = pitch;
+			indata[1][LENGTH-1] = yaw;
+			indata[2][LENGTH-1] = roll;
+			k++;
+		}	
 		LED0 = !LED0;
 	}
 	EXTI->PR=1<<0;  //清除LINE0上的中断标志位  
 }
 
 int main(void){		
-	unsigned int k = 0;			// for periodic counting of resp_rate_cal
-	u8 t = 0;                 // for periodic reading of MPU6050
-	int i = 0, j = 0;
+	
 	LED0 = 0;
 	LED1 = 0;	
-	float pitch,roll,yaw; 		//欧拉角	
 	Stm32_Clock_Init(9);		//系统时钟设置
 	delay_init(72);	   	 		//延时初始化 
 	usmart_dev.init(72);		//初始化USMART
@@ -62,6 +76,10 @@ int main(void){
 	EXTIX_Init();        // initiate extern interrupt
 		
 	while(1){		
+<<<<<<< HEAD
+		LED1 = !LED1; // rising-edge triggering interrupt
+		breath_rate = resp_rate_cal(indata);
+=======
 		if(mpu_dmp_get_data(&pitch,&roll,&yaw)==0){ 
 			// The actual sample rate of MPU6050 is actually 8.33Hz 
 			// (= 100/((u8)100/SAMP_RATE)), in parametre_define.h
@@ -80,9 +98,10 @@ int main(void){
 			}
 		}	
 		
+>>>>>>> parent of 3989e78... origin
 		if(k == BUFF_LEN/2){
 			LED1 = !LED1;
 			k = 0;				
-		}   		
-	}	
+		} 		
+	}
 }

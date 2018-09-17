@@ -21,12 +21,28 @@ float resp_rate_cal(float indata[ROW][COLUMN]){
 	float breath_rate = 5.2;
 	
 /// --------code start here---------
+<<<<<<< HEAD
+<<<<<<< HEAD
+	
+	// Get variance
+	/*----------------------------------------------
+	* Alert!!!!: The variance may go infinite 
+	* if there are too many or too large inputs.
+	* Check it before run.
+	-----------------------------------------------*/
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of 3989e78... origin
 	/*
 	// Get variance	
 	// * Alert!!!!: The variance may go infinite 
 	// * if there are too many or too large inputs.
 	// * Check it before run.
 
+>>>>>>> parent of 3989e78... origin
+=======
+>>>>>>> master
 	float64_t var[ROW] = {0}; // to store the variances of input Eulerian angles in order of Pitch Yaw Roll
 	for(i=0;i<ROW;i++){
 		var[i] = GetVariane(indata[i], LENGTH);
@@ -43,38 +59,70 @@ float resp_rate_cal(float indata[ROW][COLUMN]){
 	lpf_output = &cell_1024[0];
 	fun_lpf(lpf_input, lpf_output); //the output is in testOutput, a global variable in arm_fir_example_f32.h
 	
-	// detrend	
-	// * The input and outputo of detrend() can be the same,
-	// * coz the current output is not affected by former inputs.
-	// * The input and theoutput are both in detrend_out	
+	// detrend
+	/*---------------------------------------------------
+	The input and outputo of detrend() can be the same,
+	coz the current output is not affected by former inputs.
+	The input and theoutput are both in detrend_out
+	----------------------------------------------------*/	
 	float *detrend_out;
 	detrend_out = &cell_1024[0];
 	detrend(detrend_out, LENGTH); 
 	*/
 	// fft
+<<<<<<< HEAD
+	/*-----------------------------------------------------------
+	* testIntput_fft has 2048 numbers. Even positions are for real parts 
+	* and odd positions are for imaginary parts, which are 0 in this case.
+	----------------------------------------------------------------*/
+<<<<<<< HEAD
+=======
 	// * testIntput_fft has 2048 numbers. Even positions are for real parts 
 	// * and odd positions are for imaginary parts, which are 0 in this case.
 	float *detrend_out;
 	detrend_out = &cell_1024[0];
+<<<<<<< HEAD
+>>>>>>> parent of 3989e78... origin
+=======
+>>>>>>> master
+=======
+>>>>>>> parent of 3989e78... origin
 	j = 0;
+	for(i=0;i<TEST_LENGTH_SAMPLES;i=i+2){
+		cell_2048[i] = cell_1024[j]; 
+		cell_2048[i+1] = 0;
+		j++;
+	}
 	float *fft_input; 
 	fft_input = &cell_2048[0];
-	for(i=0;i<TEST_LENGTH_SAMPLES;i=i+2){
-		fft_input[i] = detrend_out[j]; 
-		fft_input[i+1] = 0;
-		j++;
-	}	
 	float *fft_output;
 	fft_output = &cell_1024[0];
 	arm_fft(fft_input, fft_output); // The output is in testOutput_fft in arm_fft_bin_example_f32.h
 	
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
+	
+=======
 	/*
+>>>>>>> parent of 3989e78... origin
+=======
+	/*
+>>>>>>> parent of 3989e78... origin
 	// fun_map. 
-	// * Pick up freuqency components of the signal between 0.2-1.25 Hz.
-	// * The length of output is MAP_LENGTH
+	/*-----------------------------------------
+	* Pick up freuqency components of the signal between 0.2-1.25 Hz.
+	* The length of output is MAP_LENGTH
+	------------------------------------------*/
+	float *map_in;
+	map_in = &cell_1024[0];
 	float *map_out;
 	map_out = &cell_2048[0];
-	fun_map(fft_output, map_out, LENGTH, HZ_LOWER, HZ_UPPER);
+	fun_map(map_in, map_out, LENGTH, HZ_LOWER, HZ_UPPER); 
+	// fun_map(fft_output, map_out, LENGTH, HZ_LOWER, HZ_UPPER);
+
 	
 	// sort
 	int sort_out[MAP_LENGTH] = {0};
@@ -87,7 +135,15 @@ float resp_rate_cal(float indata[ROW][COLUMN]){
 	
 	// GetBreathFreq	
 	breath_rate = GetBreathFreq(freq_out, MAP_LENGTH, ODD_LOWER, ODD_UPPER); 
+<<<<<<< HEAD
+<<<<<<< HEAD
+	
+=======
 	*/
+>>>>>>> parent of 3989e78... origin
+=======
+	*/
+>>>>>>> parent of 3989e78... origin
 	return breath_rate;
 
 }
