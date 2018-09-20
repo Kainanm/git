@@ -28,8 +28,6 @@ Project File Date:  09/07/2018
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'E:\Keil_v525\ARM\ARMCC\Bin'
 Build target 'Target 1'
 compiling main.c...
-.\Resp\AngLocDes.h(16): warning:  #550-D: variable "index_mid"  was set but never used
-  	int index_max, index_mid, index_min;
 .\Resp\arm_fft_bin_example\Include\core_cm7.h(71): warning:  #47-D: incompatible redefinition of macro "__CORTEX_M"  (declared at line 71 of ".\Resp\arm_fft_bin_example\Include\core_cm3.h")
   #define __CORTEX_M                (7U)                                       /*!< Cortex-M Core */
 .\Resp\arm_fft_bin_example\Include\arm_math.h(4870): warning:  #223-D: function "__SMUAD" declared implicitly
@@ -50,11 +48,15 @@ compiling main.c...
       *pIbeta = __QADD(product4, product3);
 .\Resp\arm_fft_bin_example_f32.h(87): warning:  #550-D: variable "status"  was set but never used
     arm_status status;
-main.c: 11 warnings, 0 errors
+main.c(47): warning:  #1-D: last line of file ends without a newline
+  }
+main.c(27): warning:  #550-D: variable "mpu_status"  was set but never used
+    u8 mpu_status;
+main.c: 12 warnings, 0 errors
 linking...
-Program Size: Code=35680 RO-data=15924 RW-data=416 ZI-data=13192  
+Program Size: Code=25988 RO-data=4032 RW-data=432 ZI-data=13192  
 FromELF: creating hex file...
-".\Objects\testv5.axf" - 0 Error(s), 11 Warning(s).
+".\Objects\testv5.axf" - 0 Error(s), 12 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -95,7 +97,7 @@ Package Vendor: Keil
 
    * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:Breakpoint:1.4.0
       Source file:   Source\retarget_io.c
-Build Time Elapsed:  00:00:07
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

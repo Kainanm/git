@@ -11,27 +11,15 @@
 int AngLocDes(double angle_var[], int n){
 	// n is the length of angle_var, AKA the number of variances
 	int i;
-	//int	*loc;
-	double max, min; 
-	int index_max, index_mid, index_min;
-	
-	//loc = (int*)malloc(sizeof(int)*n);
-	
-    max = angle_var[0]; 
-    min = angle_var[0];
-
+	double max; 
+	int index_max;
+  max = angle_var[0]; 
 	for (i = 1; i<n; i++){
 		if (angle_var[i] >= max){
 			max = angle_var[i];
 			index_max = i;
 		}
-		if (angle_var[i] <= min){
-			min = angle_var[i];
-			index_min = i;
-		}
 	}
-	
-	index_mid = 3 - index_min - index_max; //三个下标之和为3 = 0 + 1 + 2
 	return index_max;
 }
 // 测试成功，输出为数组loc
