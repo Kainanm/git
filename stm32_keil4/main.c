@@ -12,7 +12,7 @@
 // For Extern interrupt
 #include "exti.h" 	
 
-
+/*
 //发送加速度传感器数据和陀螺仪数据
 //aacx,aacy,aacz:x,y,z三个方向上面的加速度值
 //gyrox,gyroy,gyroz:x,y,z三个方向上面的陀螺仪值
@@ -32,39 +32,23 @@ void mpu6050_send_data(short aacx,short aacy,short aacz,short gyrox,short gyroy,
 	tbuf[10]=(gyroz>>8)&0XFF;
 	tbuf[11]=gyroz&0XFF;
 }	
-
+*/
 
 float breath_rate;
 float indata[ROW][COLUMN]; 
-unsigned int k = 0;			// for periodic counting of resp_rate_cal
-float pitch,roll,yaw; 		//欧拉角	
+
 void EXTI0_IRQHandler(void){
-	//上升沿触发	
-	u8 t = 0;                 // for periodic reading of MPU6050
-	int i = 0, j = 0;
-	if(mpu_dmp_get_data(&pitch,&roll,&yaw)==0){ 
-		// The actual sample rate of MPU6050 is actually 8.33Hz 
-		// (= 100/((u8)100/SAMP_RATE)), in parametre_define.h
-		t++;
-		if(t == MPU_DVDR){
-			t = 0;
-			for(i = 0; i < ROW; i++){
-				for(j = 1; j < LENGTH; j++){				
-					indata[i][j-1] = indata[i][j];
-				}
-			}
-			indata[0][LENGTH-1] = pitch;
-			indata[1][LENGTH-1] = yaw;
-			indata[2][LENGTH-1] = roll;
-			k++;
-		}	
-		LED0 = !LED0;
-	}
+	// falling edge triggering	
+	LED0 = !LED0;
+	delay_ms(100);
 	EXTI->PR=1<<0;  //清除LINE0上的中断标志位  
 }
 
 int main(void){		
-	
+	unsigned int k = 0;			// for periodic counting of resp_rate_cal
+	float pitch,roll,yaw; 		// Eulerian angles	
+	u8 t = 0;                 // for periodic reading of MPU6050
+	int i = 0, j = 0;
 	LED0 = 0;
 	LED1 = 0;	
 	Stm32_Clock_Init(9);		//系统时钟设置
@@ -75,12 +59,28 @@ int main(void){
 		while(mpu_dmp_init()); // wait until mpu initialisation finished
 	EXTIX_Init();        // initiate extern interrupt
 		
-	while(1){		
-		LED1 = !LED1; // rising-edge triggering interrupt
-		breath_rate = resp_rate_cal(indata);
-		if(k == BUFF_LEN/2){
-			LED1 = !LED1;
-			k = 0;				
-		} 		
+	while(1){	
+		if(mpu_dmp_get_data(&pitch,&roll,&yaw)==0){ 
+		// The actual sample rate of MPU6050 is actually 8.33Hz 
+			t++;
+			if(t == MPU_DVDR){
+				t = 0;
+				for(i = 0; i < ROW; i++){
+					for(j = 1; j < LENGTH; j++){				
+						indata[i][j-1] = indata[i][j];
+					}
+				}
+				indata[0][LENGTH-1] = pitch;
+				indata[1][LENGTH-1] = yaw;
+				indata[2][LENGTH-1] = roll;
+				k++;
+				LED1 = !LED1;
+			}	
+			if(k == BUFF_LEN){
+				breath_rate = resp_rate_cal(indata);
+				k = 0;				
+			} 		
+		}
 	}
 }
+
