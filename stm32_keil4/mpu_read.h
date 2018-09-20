@@ -7,9 +7,9 @@
 u8 mpu_dmp_get_data(float *, float *, float *);
 float pitch,roll,yaw; 		// Eulerian angles
 u8 t = 0;
-u8 k = 0;
-// return 1: mpu data is read and updated into indata[][]
+unsigned int k = 0;
 // return 2: mpu data is read but not updated into indata[][]
+// return 1: mpu data is read and updated into indata[][]
 // return 0: mpu data is not read	
 u8 mpu_read(float indata[ROW][COLUMN]){
 	int i,j;

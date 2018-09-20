@@ -75,28 +75,28 @@ uint32_t fftSize = LENGTH;
 uint32_t ifftFlag = 0;
 uint32_t doBitReverse = 1;
 
-
-/* ----------------------------------------------------------------------
-* Max magnitude FFT Bin test
-* ------------------------------------------------------------------- */
+// void cr4_fft_256_stm32(void *pssOUT, void *pssIN,uint16_t Nbin);
 
 int32_t arm_fft(float32_t *testInput_fft, float32_t *testOutput_fft){
 // Input has 2048 elements (1024 pairs, real & imaginary) 
 // and output has 1024 elements
-	
-  arm_status status;
-  // float32_t maxValue;
-
-  status = ARM_MATH_SUCCESS;
 
   /* Process the data through the CFFT/CIFFT module */
   arm_cfft_f32(&arm_cfft_sR_f32_len1024, testInput_fft, ifftFlag, doBitReverse);
 
   /* Process the data through the Complex Magnitude Module for
   calculating the magnitude at each bin */
-  arm_cmplx_mag_f32(testInput_fft, testOutput_fft, fftSize);
+	arm_cmplx_mag_f32(testInput_fft, testOutput_fft, fftSize);
+	
+//	int i;
+//	uint16_t real[LENGTH];
+//	uint16_t imag[LENGTH] = {0}; /* real and imaginary arrays */ 
+//	for(i=0; i<<16;i++){
+//    real[i] = (uint16_t)testInput_fft[i];
+//		testInput_fft[i] = (((uint16_t)(real[i])) | ((uint32_t)(imag[i]<<16)));
+//	}
+//	cr4_fft_256_stm32(testOutput_fft, testInput_fft, LENGTH);
 
- return 1;
+	
+	return 1;
 }
-
- /** \endlink */

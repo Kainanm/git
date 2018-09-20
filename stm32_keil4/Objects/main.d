@@ -46,4 +46,5 @@
 .\objects\main.o: .\Resp\parametre_define.h
 .\objects\main.o: .\Resp\GetBreathFreq.h
 .\objects\main.o: .\Resp\parametre_define.h
+.\objects\main.o: .\Resp\mpu_read.h
 .\objects\main.o: .\Exti\HARDWARE\EXTI\exti.h

@@ -18,13 +18,12 @@ float indata[ROW][COLUMN];
 
 void EXTI0_IRQHandler(void){
 	// falling edge triggering	
-	LED0 = !LED0;
-	delay_ms(100);
+	breath_rate = resp_rate_cal(indata);
 	EXTI->PR=1<<0;  //清除LINE0上的中断标志位  
 }
 
 int main(void){	
-  u8 mpu_status;
+ // u8 mpu_status;
 	LED0 = 0;
 	LED1 = 0;	
 	Stm32_Clock_Init(9);		//系统时钟设置
@@ -33,14 +32,14 @@ int main(void){
 	LED_Init();		  			//初始化与LED连接的硬件接口
 	MPU_Init();					//初始化MPU6050
 		while(mpu_dmp_init()); // wait until mpu initialisation finished
-	// EXTIX_Init();        // initiate extern interrupt
+	EXTIX_Init();        // initiate extern interrupt
 		
 	while(1){	
-		mpu_status = mpu_read(indata);
-		if(k == BUFF_LEN){
+		mpu_read(indata);
+		if(k == BUFF_LEN/2){
 	// k is a counter, defined in mpu_read.h
-	// breath_rate = resp_rate_cal(indata);
 			LED0 = !LED0;
+			delay_ms(10);
 			k = 0;
 		}
 	}
