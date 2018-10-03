@@ -39,7 +39,6 @@ int main(void){
 		if(k == BUFF_LEN/2){
 	// k is a counter, defined in mpu_read.h
 			LED0 = !LED0;
-			delay_ms(10);
 			k = 0;
 		}
 	}
