@@ -75,12 +75,11 @@ uint32_t fftSize = LENGTH;
 uint32_t ifftFlag = 0;
 uint32_t doBitReverse = 1;
 
-// Input has 2048 elements (1024 pairs, real & imaginary) 
-// and output has 1024 elements
+
 int32_t arm_fft(float32_t *testInput_fft, float32_t *testOutput_fft){
 
   /* Process the data through the CFFT/CIFFT module */
- // arm_cfft_f32(&arm_cfft_sR_f32_len1024, testInput_fft, ifftFlag, doBitReverse);
+  arm_cfft_f32(&arm_cfft_sR_f32_len256, testInput_fft, ifftFlag, doBitReverse);
 
   /* Process the data through the Complex Magnitude Module for
   calculating the magnitude at each bin */

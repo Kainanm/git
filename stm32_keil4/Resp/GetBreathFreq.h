@@ -32,10 +32,7 @@ float GetBreathFreq(float index_hz[], int len, float abnorm_lower, float abnorm_
 		freq2 = -1.0;
 	}
 
-
 	breath_freq = (0.7 * freq1 + 0.3 * freq2); // output is in unit of per minute，公式有待改进
-
-
 	return breath_freq;
 }
 

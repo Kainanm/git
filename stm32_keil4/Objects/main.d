@@ -2,7 +2,7 @@
 .\objects\main.o: .\Resp\Include\sys.h
 .\objects\main.o: .\Exti\SYSTEM\sys\stm32f10x.h
 .\objects\main.o: .\Resp\arm_fft_bin_example\Include\core_cm3.h
-.\objects\main.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\main.o: .\Resp\arm_fft_bin_example\Include\cmsis_version.h
 .\objects\main.o: .\Resp\arm_fft_bin_example\Include\cmsis_compiler.h
 .\objects\main.o: .\Resp\arm_fft_bin_example\Include\cmsis_armcc.h
@@ -17,7 +17,7 @@
 .\objects\main.o: .\Resp\Include\mpu6050.h
 .\objects\main.o: .\Resp\Include\mpuiic.h
 .\objects\main.o: .\Resp\parametre_define.h
-.\objects\main.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\math.h
+.\objects\main.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\objects\main.o: .\Resp\parametre_define.h
 .\objects\main.o: .\Resp\resp_rate_cal.h
 .\objects\main.o: .\Resp\parametre_define.h
@@ -29,7 +29,7 @@
 .\objects\main.o: .\Resp\arm_fft_bin_example\Include\arm_math.h
 .\objects\main.o: .\Resp\arm_fft_bin_example\Include\core_cm7.h
 .\objects\main.o: .\Resp\arm_fft_bin_example\Include\cmsis_version.h
-.\objects\main.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\string.h
+.\objects\main.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\main.o: .\Resp\arm_fir_example\math_helper.h
 .\objects\main.o: .\Resp\parametre_define.h
 .\objects\main.o: .\Resp\detrend.h

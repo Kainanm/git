@@ -1,26 +1,22 @@
 #include "parametre_define.h"
 
 static int Nums_of_map = 0; // the length of the mapped signals
+// n is the length of the ang_fft
+// The function is to get the abs(fft_signals) at frequencies we want.
+// the output is stored in ind_mapped
 
 int fun_map(float ang_fft[], float ind_mapped[], int n, float pickfreq_lower, float pickfreq_upper){
-	// n is the length of the ang_fft
-	// The function is to get the abs(fft_signals) at frequencies we want.
-	// the output is stored in ind_mapped
 	
 	int i;
-	
 	float m = (float)(n - 1) / (float)SAMP_RATE;
 	int ind_lower = (int)(m * pickfreq_lower); // find the index corresponding to HZ_LOWER. 
 	// if ind_lower +1, the outcome breath_rate is closer to matlab result, but it does not make sense on math.
-	
-	
-	
+		
 	for (i = 0; i < MAP_LENGTH; i++){
 		ind_mapped[i] = ang_fft[ind_lower + i];
 	}
 
 	return 1;
-	//free(ind_mapped);
 }
 
 

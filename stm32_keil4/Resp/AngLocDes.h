@@ -15,14 +15,20 @@ int AngLocDes(double angle_var[], int n){
 	int index_max;
   max = angle_var[0]; 
 	for (i = 1; i<n; i++){
-		if (angle_var[i] >= max){
+		if (angle_var[i] > max){
 			max = angle_var[i];
 			index_max = i;
 		}
 	}
+	if(i>2){
+		i = 2;
+	} else if(i<0){
+		i = 0;
+	}	// to make sure index is in {0,1,2}
+	
 	return index_max;
 }
-// 测试成功，输出为数组loc
+
 
 /*void main(){
 	int i, n = 3;

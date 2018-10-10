@@ -18,8 +18,9 @@
 #define HZ_UPPER 1.25
 
 // Calculate the length of output of fun_map
-#define MMM (float)(LENGTH - 1) / (float)SAMP_RATE // The gradient of map line
-#define MAP_LENGTH ((int)(MMM * HZ_UPPER) + 1) - ((int)(MMM * HZ_LOWER)) + 1
+//#define MMM (float)(LENGTH - 1) / (float)SAMP_RATE // The gradient of map line
+//#define MAP_LENGTH ((int)(MMM * HZ_UPPER) + 1) - ((int)(MMM * HZ_LOWER)) + 1
+#define MAP_LENGTH 69
 
 // Assume the resipatory rate is [12.5, 40] per minute. 
 // Results out of the range are considered as odd values.

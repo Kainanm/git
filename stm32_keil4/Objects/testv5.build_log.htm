@@ -5,11 +5,11 @@
 <h2>Tool Versions:</h2>
 IDE-Version: ¦ÌVision V5.25.2.0
 Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: conan marcus, lkfjlaj, LIC=UB463-ALS04-16EQV-P8GQE-7GG93-DF7M1
+License Information: conan jlsjf, dgfdasrfdaw, LIC=CZL01-CJG6U-9U04U-SWDBG-4XURH-4HU8S
  
 Tool Versions:
-Toolchain:       MDK-ARM Professional  Version: 5.25.2.0
-Toolchain Path:  E:\Keil_v525\ARM\ARMCC\Bin
+Toolchain:       MDK-ARM Plus  Version: 5.25.2.0
+Toolchain Path:  E:\Keil_v5\ARM\ARMCC\Bin
 C Compiler:      Armcc.exe V5.06 update 6 (build 750)
 Assembler:       Armasm.exe V5.06 update 6 (build 750)
 Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
@@ -21,12 +21,29 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.1.0
 Dialog DLL:      TARMSTM.DLL V1.66.0.0
  
 <h2>Project:</h2>
-C:\Users\Conor\OneDrive - The University of Melbourne\git\stm32_keil4\testv5.uvprojx
-Project File Date:  09/07/2018
+E:\OneDrive - The University of Melbourne\git\stm32_keil4\testv5.uvprojx
+Project File Date:  10/10/2018
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'E:\Keil_v525\ARM\ARMCC\Bin'
-Build target 'Target 1'
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'E:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'Target 1'
+assembling STM32F10x.s...
+compiling retarget_io.c...
+compiling sys.c...
+compiling usart.c...
+SYSTEM\usart\usart.c(52): warning:  #260-D: explicit type is missing ("int" assumed)
+  _sys_exit(int x) 
+SYSTEM\usart\usart.c: 1 warning, 0 errors
+compiling usmart_config.c...
+compiling exti.c...
+compiling usmart.c...
+compiling key.c...
+compiling led.c...
+compiling mpuiic.c...
+compiling usmart_str.c...
+compiling delay.c...
+compiling mpu6050.c...
+compiling inv_mpu_dmp_motion_driver.c...
 compiling main.c...
 .\Resp\arm_fft_bin_example\Include\core_cm7.h(71): warning:  #47-D: incompatible redefinition of macro "__CORTEX_M"  (declared at line 71 of ".\Resp\arm_fft_bin_example\Include\core_cm3.h")
   #define __CORTEX_M                (7U)                                       /*!< Cortex-M Core */
@@ -46,11 +63,17 @@ compiling main.c...
       *pIalpha = __QSUB(product1, product2);
 .\Resp\arm_fft_bin_example\Include\arm_math.h(5347): warning:  #223-D: function "__QADD" declared implicitly
       *pIbeta = __QADD(product4, product3);
-main.c: 9 warnings, 0 errors
+.\Resp\resp_rate_cal.h(88): warning:  #167-D: argument of type "float *" is incompatible with parameter of type "int *"
+  	fun_index2hz(map_out, freq_out, MAP_LENGTH, HZ_LOWER, HZ_UPPER);
+.\Resp\resp_rate_cal.h(82): warning:  #177-D: variable "sort_out"  was declared but never referenced
+  	int sort_out[MAP_LENGTH];
+main.c: 11 warnings, 0 errors
+compiling inv_mpu.c...
+compiling ILI93xx.c...
 linking...
-Program Size: Code=30676 RO-data=4112 RW-data=436 ZI-data=7052  
+Program Size: Code=35608 RO-data=7060 RW-data=440 ZI-data=7048  
 FromELF: creating hex file...
-".\Objects\testv5.axf" - 0 Error(s), 9 Warning(s).
+".\Objects\testv5.axf" - 0 Error(s), 12 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -75,8 +98,8 @@ Package Vendor: Keil
 
 <h2>Collection of Component include folders:</h2>
   .\RTE\_Target_1
-  E:\Keil_v525\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include
-  E:\Keil_v525\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include
+  E:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include
+  E:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
 
@@ -91,7 +114,7 @@ Package Vendor: Keil
 
    * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:Breakpoint:1.4.0
       Source file:   Source\retarget_io.c
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

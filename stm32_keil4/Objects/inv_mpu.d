@@ -1,9 +1,9 @@
 .\objects\inv_mpu.o: HARDWARE\MPU6050\eMPL\inv_mpu.c
-.\objects\inv_mpu.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\inv_mpu.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\stdint.h
-.\objects\inv_mpu.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\stdlib.h
-.\objects\inv_mpu.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\string.h
-.\objects\inv_mpu.o: E:\Keil_v525\ARM\ARMCC\Bin\..\include\math.h
+.\objects\inv_mpu.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\inv_mpu.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\inv_mpu.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\inv_mpu.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\inv_mpu.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\objects\inv_mpu.o: HARDWARE\MPU6050\eMPL\inv_mpu.h
 .\objects\inv_mpu.o: .\Exti\SYSTEM\sys\stm32f10x.h
 .\objects\inv_mpu.o: .\Resp\arm_fft_bin_example\Include\core_cm3.h
