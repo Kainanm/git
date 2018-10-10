@@ -16,6 +16,7 @@
 static float32_t cell_double_length[TEST_LENGTH_SAMPLES_FFT];
 static float32_t cell_length[TEST_LENGTH_SAMPLES_FFT/2];
 int max_index = 0;
+int sort_out[MAP_LENGTH]={0};
 
 float resp_rate_cal(float indata[ROW][COLUMN]){	      
 /// state variables
@@ -79,13 +80,13 @@ float resp_rate_cal(float indata[ROW][COLUMN]){
 	fun_map(fft_output, map_out, LENGTH, HZ_LOWER, HZ_UPPER);
 
 	// sort
-	int sort_out[MAP_LENGTH];
-	// sortindex(map_out, sort_out, MAP_LENGTH);
+	// int sort_out[MAP_LENGTH]={0};
+	sortIndex(map_out, sort_out, MAP_LENGTH);
 	
 	// fun_index2hz
 	float *freq_out;
 	freq_out = &cell_length[0];
-	fun_index2hz(map_out, freq_out, MAP_LENGTH, HZ_LOWER, HZ_UPPER);
+	fun_index2hz(sort_out, freq_out, MAP_LENGTH, HZ_LOWER, HZ_UPPER);
 	
 	// GetBreathFreq	
 	breath_rate = GetBreathFreq(freq_out, MAP_LENGTH, ODD_LOWER, ODD_UPPER); 

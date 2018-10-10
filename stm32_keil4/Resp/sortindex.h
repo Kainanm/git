@@ -1,7 +1,7 @@
 #include "parametre_define.h"
 
 // same as sort() in matlab
-int sortindex(float a[], int p_index[], int n){
+int sortIndex(float a[], int p_index[], int n){
 	// a is input and p_index is output
 	// n = MAP_LENGTH
 	int i, j;
