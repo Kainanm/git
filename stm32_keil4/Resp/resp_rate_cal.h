@@ -80,7 +80,6 @@ float resp_rate_cal(float indata[ROW][COLUMN]){
 	fun_map(fft_output, map_out, LENGTH, HZ_LOWER, HZ_UPPER);
 
 	// sort
-	// int sort_out[MAP_LENGTH]={0};
 	sortIndex(map_out, sort_out, MAP_LENGTH);
 	
 	// fun_index2hz
