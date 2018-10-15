@@ -6,7 +6,7 @@
 #include "mpu_read.h"
 // For respiratory rate calculation
 #include "parametre_define.h"
-#include "resp_rate_cal.h"
+
 // For Extern interrupt
 #include "exti.h" 	
 
@@ -15,6 +15,8 @@ float indata[ROW][COLUMN];
 // float pitch,roll,yaw; 		// Eulerian angles	
 //u8 t = 0; 
 //u8 k = 0;			// for periodic counting of resp_rate_cal
+
+float resp_rate_cal(float indata[ROW][COLUMN]);
 
 void EXTI0_IRQHandler(void){
 	// falling edge triggering	
@@ -35,9 +37,9 @@ int main(void){
 	EXTIX_Init();        // initiate extern interrupt
 		
 	while(1){	
-		mpu_read(indata);
+		mpu_read(indata); 
+		// k is a counter, defined in mpu_read.h
 		if(k == BUFF_LEN/2){
-	// k is a counter, defined in mpu_read.h
 			LED0 = !LED0;
 			k = 0;
 		}
