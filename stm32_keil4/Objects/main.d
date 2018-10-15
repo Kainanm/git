@@ -11,12 +11,10 @@
 .\objects\main.o: .\Resp\Include\led.h
 .\objects\main.o: .\Resp\Include\usmart.h
 .\objects\main.o: .\Resp\Include\usmart_str.h
-.\objects\main.o: mpu_read.h
-.\objects\main.o: .\Resp\Include\inv_mpu.h
-.\objects\main.o: .\Resp\Include\inv_mpu_dmp_motion_driver.h
 .\objects\main.o: .\Resp\Include\mpu6050.h
 .\objects\main.o: .\Resp\Include\mpuiic.h
+.\objects\main.o: .\Resp\Include\inv_mpu.h
+.\objects\main.o: .\Resp\Include\inv_mpu_dmp_motion_driver.h
 .\objects\main.o: .\Resp\parametre_define.h
 .\objects\main.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
-.\objects\main.o: .\Resp\parametre_define.h
 .\objects\main.o: .\Exti\HARDWARE\EXTI\exti.h

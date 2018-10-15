@@ -10,6 +10,7 @@
 ".\objects\inv_mpu_dmp_motion_driver.o"
 ".\objects\exti.o"
 ".\objects\resp_rate_cal.o"
+".\objects\mpu_read.o"
 ".\objects\delay.o"
 ".\objects\sys.o"
 ".\objects\usart.o"

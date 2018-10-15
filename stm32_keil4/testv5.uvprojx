@@ -441,6 +441,11 @@
               <FileType>1</FileType>
               <FilePath>.\Resp\resp_rate_cal.c</FilePath>
             </File>
+            <File>
+              <FileName>mpu_read.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\HARDWARE\MPU6050\mpu_read.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -1,18 +1,18 @@
-#include "parametre_define.h"
+#include "arm_const_structs.h"
 #include "arm_math.h"
 #include "math_helper.h"
-#include "arm_const_structs.h"
+#include "parametre_define.h"
 
 /*------------------------------------------------
  * state the global variables
 -------------------------------------------------*/
-// resp_rate_cal.h
+// for resp_rate_cal
 static float32_t cell_double_length[TEST_LENGTH_SAMPLES_FFT];
 static float32_t cell_length[TEST_LENGTH_SAMPLES_FFT/2];
 int max_index = 0;
 int sort_out[MAP_LENGTH]={0};
 
-// FIR.h
+// for FIR
 static float32_t firStateF32[BLOCK_SIZE + NUM_TAPS - 1]; // Must be global
 const float firCoeffs32[NUM_TAPS] = 
 { 
@@ -25,10 +25,11 @@ const float firCoeffs32[NUM_TAPS] =
     0.0048979218281252, 0.00158878927350977 
 };
 
-// FFT.h
+// for FFT
 uint32_t fftSize = LENGTH;
 uint32_t ifftFlag = 0;
 uint32_t doBitReverse = 1;
+
 
 double GetVariane(float x[], int n){
 	//求数组x（具有n个元素）的方差: Var=E(X^2)-[E(X)]^2

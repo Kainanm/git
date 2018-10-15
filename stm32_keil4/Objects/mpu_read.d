@@ -1,0 +1,16 @@
+.\objects\mpu_read.o: HARDWARE\MPU6050\mpu_read.c
+.\objects\mpu_read.o: .\Resp\Include\inv_mpu.h
+.\objects\mpu_read.o: .\Exti\SYSTEM\sys\stm32f10x.h
+.\objects\mpu_read.o: .\Resp\arm_fft_bin_example\Include\core_cm3.h
+.\objects\mpu_read.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\mpu_read.o: .\Resp\arm_fft_bin_example\Include\cmsis_version.h
+.\objects\mpu_read.o: .\Resp\arm_fft_bin_example\Include\cmsis_compiler.h
+.\objects\mpu_read.o: .\Resp\arm_fft_bin_example\Include\cmsis_armcc.h
+.\objects\mpu_read.o: .\Exti\SYSTEM\sys\system_stm32f10x.h
+.\objects\mpu_read.o: .\Resp\Include\inv_mpu_dmp_motion_driver.h
+.\objects\mpu_read.o: HARDWARE\MPU6050\mpu6050.h
+.\objects\mpu_read.o: HARDWARE\MPU6050\mpuiic.h
+.\objects\mpu_read.o: .\Resp\Include\sys.h
+.\objects\mpu_read.o: .\Resp\parametre_define.h
+.\objects\mpu_read.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\objects\mpu_read.o: .\Resp\Include\led.h

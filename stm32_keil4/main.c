@@ -2,11 +2,13 @@
 #include "sys.h"
 #include "delay.h"
 #include "led.h" 		 	 
-#include "usmart.h"   
-#include "mpu_read.h"
+#include "usmart.h" 
+#include "mpu6050.h"
+#include "inv_mpu.h"
+#include "inv_mpu_dmp_motion_driver.h" 
+// #include "mpu_read.h"
 // For respiratory rate calculation
 #include "parametre_define.h"
-
 // For Extern interrupt
 #include "exti.h" 	
 
@@ -17,6 +19,8 @@ float indata[ROW][COLUMN];
 //u8 k = 0;			// for periodic counting of resp_rate_cal
 
 float resp_rate_cal(float indata[ROW][COLUMN]);
+u8 mpu_read(float indata[ROW][COLUMN]);
+extern unsigned int k;
 
 void EXTI0_IRQHandler(void){
 	// falling edge triggering	
