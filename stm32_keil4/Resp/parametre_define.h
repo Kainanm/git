@@ -31,7 +31,7 @@
 #define TEST_LENGTH_SAMPLES  LENGTH
 #define SNR_THRESHOLD_F32    140.0f
 #define BLOCK_SIZE           1
-#define NUM_TAPS             20
+#define NUM_TAPS             6
 
 
 // Define for FFT
