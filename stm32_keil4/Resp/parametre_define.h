@@ -1,10 +1,10 @@
 #include <math.h>  
 #include "sys.h"
 
-#define LENGTH 256 // length of input signal
+#define LENGTH 1024 // length of input signal
 #define ROW 3
 #define COLUMN LENGTH
-#define SAMP_RATE 4.0
+#define SAMP_RATE 17.0
 #define BUFF_LEN 128
 //#define MPU_RATE (u16)SAMP_RATE // the sample rate of MPU6050, 4-1000 hz
 #define MPU_DVDR (u8)(100/SAMP_RATE) // The sample rate of MPU is always 100 Hz
@@ -24,15 +24,16 @@
 
 // Assume the resipatory rate is [12.5, 40] per minute. 
 // Results out of the range are considered as odd values.
-#define ODD_LOWER 12.5
-#define ODD_UPPER 40
+#define ODD_LOWER 0
+#define ODD_UPPER 75
 
 // Define parametres for FIR filter
 #define TEST_LENGTH_SAMPLES  LENGTH
 #define SNR_THRESHOLD_F32    140.0f
 #define BLOCK_SIZE           1
-#define NUM_TAPS             6
-
+// #define NUM_TAPS             6 // 4hz sampling
+// #define NUM_TAPS             16 // 8hz sampling
+#define NUM_TAPS             35 // 17hz sampling
 
 // Define for FFT
 #define TEST_LENGTH_SAMPLES_FFT LENGTH*2

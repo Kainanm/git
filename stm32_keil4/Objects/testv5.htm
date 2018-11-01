@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\testv5.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\testv5.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Thu Oct 25 17:37:10 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Wed Oct 31 14:19:15 2018
 <BR><P>
 <H3>Maximum Stack Usage =        600 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -798,7 +798,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;resp_rate_cal
 </UL>
 
-<P><STRONG><a name="[1f]"></a>EXTI0_IRQHandler</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, main.o(i.EXTI0_IRQHandler))
+<P><STRONG><a name="[1f]"></a>EXTI0_IRQHandler</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, main.o(i.EXTI0_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 600<LI>Call Chain = EXTI0_IRQHandler &rArr; resp_rate_cal &rArr; arm_fft &rArr; arm_cfft_f32 &rArr; arm_cfft_radix8by4_f32 &rArr; arm_radix8_butterfly_f32 &rArr; __aeabi_fmul
 </UL>
 <BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;resp_rate_cal
@@ -1248,6 +1248,7 @@ Global Symbols
 <P><STRONG><a name="[6]"></a>delay_ms</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, delay.o(i.delay_ms))
 <BR><BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_st_biases
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU_Init
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_set_sensors
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_set_bypass
 <LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_reset_fifo
@@ -1477,7 +1478,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;resp_rate_cal
 </UL>
 
-<P><STRONG><a name="[de]"></a>fun_map</STRONG> (Thumb, 78 bytes, Stack size 40 bytes, resp_rate_cal.o(i.fun_map))
+<P><STRONG><a name="[de]"></a>fun_map</STRONG> (Thumb, 76 bytes, Stack size 40 bytes, resp_rate_cal.o(i.fun_map))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = fun_map &rArr; __aeabi_fmul
 </UL>
 <BR>[Calls]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
@@ -1500,12 +1501,13 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;inv_orientation_matrix_to_scalar
 </UL>
 
-<P><STRONG><a name="[59]"></a>main</STRONG> (Thumb, 94 bytes, Stack size 0 bytes, main.o(i.main))
+<P><STRONG><a name="[59]"></a>main</STRONG> (Thumb, 100 bytes, Stack size 0 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 320 + Unknown Stack Size
 <LI>Call Chain = main &rArr; mpu_read &rArr; mpu_dmp_get_data &rArr; dmp_read_fifo &rArr; mpu_read_fifo_stream &rArr; MPU_Read_Len &rArr; MPU_IIC_Read_Byte &rArr; MPU_IIC_NAck &rArr; MPU_IIC_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_read
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_dmp_init
+<LI><a href="#[6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_init
 <LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Stm32_Clock_Init
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU_Init
@@ -1640,7 +1642,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_set_sample_rate
 </UL>
 
-<P><STRONG><a name="[e7]"></a>mpu_read</STRONG> (Thumb, 140 bytes, Stack size 16 bytes, mpu_read.o(i.mpu_read))
+<P><STRONG><a name="[e7]"></a>mpu_read</STRONG> (Thumb, 146 bytes, Stack size 16 bytes, mpu_read.o(i.mpu_read))
 <BR><BR>[Stack]<UL><LI>Max Depth = 320<LI>Call Chain = mpu_read &rArr; mpu_dmp_get_data &rArr; dmp_read_fifo &rArr; mpu_read_fifo_stream &rArr; MPU_Read_Len &rArr; MPU_IIC_Read_Byte &rArr; MPU_IIC_NAck &rArr; MPU_IIC_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_dmp_get_data
@@ -1817,7 +1819,7 @@ Global Symbols
 <P><STRONG><a name="[4]"></a>read_addr</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, usmart.o(i.read_addr))
 <BR>[Address Reference Count : 1]<UL><LI> usmart_config.o(.data)
 </UL>
-<P><STRONG><a name="[88]"></a>resp_rate_cal</STRONG> (Thumb, 250 bytes, Stack size 80 bytes, resp_rate_cal.o(i.resp_rate_cal))
+<P><STRONG><a name="[88]"></a>resp_rate_cal</STRONG> (Thumb, 252 bytes, Stack size 80 bytes, resp_rate_cal.o(i.resp_rate_cal))
 <BR><BR>[Stack]<UL><LI>Max Depth = 592<LI>Call Chain = resp_rate_cal &rArr; arm_fft &rArr; arm_cfft_f32 &rArr; arm_cfft_radix8by4_f32 &rArr; arm_radix8_butterfly_f32 &rArr; __aeabi_fmul
 </UL>
 <BR>[Calls]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sortIndex
