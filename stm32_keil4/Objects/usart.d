@@ -1,5 +1,5 @@
-.\objects\usart.o: SYSTEM\usart\usart.c
-.\objects\usart.o: SYSTEM\usart\usart.h
+.\objects\usart.o: usart.c
+.\objects\usart.o: .\Resp\Include\usart.h
 .\objects\usart.o: .\Resp\Include\sys.h
 .\objects\usart.o: .\Exti\SYSTEM\sys\stm32f10x.h
 .\objects\usart.o: .\Resp\arm_fft_bin_example\Include\core_cm3.h

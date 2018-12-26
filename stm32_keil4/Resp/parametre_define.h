@@ -1,11 +1,11 @@
 #include <math.h>  
 #include "sys.h"
 
-#define LENGTH 1024 // length of input signal
+#define LENGTH 256 // length of input signal
 #define ROW 3
 #define COLUMN LENGTH
-#define SAMP_RATE 17.0
-#define BUFF_LEN 128
+#define SAMP_RATE 4.0
+#define BUFF_LEN 64
 //#define MPU_RATE (u16)SAMP_RATE // the sample rate of MPU6050, 4-1000 hz
 #define MPU_DVDR (u8)(100/SAMP_RATE) // The sample rate of MPU is always 100 Hz
 																			// Do not know why. So, it needs a freqz devider 
@@ -33,7 +33,7 @@
 #define BLOCK_SIZE           1
 // #define NUM_TAPS             6 // 4hz sampling
 // #define NUM_TAPS             16 // 8hz sampling
-#define NUM_TAPS             35 // 17hz sampling
+#define NUM_TAPS             6 // 17hz sampling
 
 // Define for FFT
 #define TEST_LENGTH_SAMPLES_FFT LENGTH*2

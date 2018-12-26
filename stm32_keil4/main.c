@@ -6,9 +6,7 @@
 #include "mpu6050.h"
 #include "inv_mpu.h"
 #include "inv_mpu_dmp_motion_driver.h" 
-// For LCD
-//#include "lcd.h"
-//#include "usart.h"
+
 // For respiratory rate calculation
 #include "parametre_define.h"
 // For Extern interrupt

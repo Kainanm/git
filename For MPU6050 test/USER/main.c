@@ -171,6 +171,7 @@ void usart1_report_imu(short aacx,short aacy,short aacz,short gyrox,short gyroy,
 				LCD_ShowNum(30+48+8,200,temp/100,3,16);		//显示整数部分	    
 				LCD_ShowNum(30+48+40,200,temp%10,1,16);		//显示小数部分 
 			*/
+				
 				// Display pitch on LCD
 				temp=pitch*10;
 				if(temp<0)

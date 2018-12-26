@@ -23,7 +23,7 @@
 "..\obj\usmart.o"
 "..\obj\usmart_config.o"
 "..\obj\usmart_str.o"
---strict --scatter "..\OBJ\MPU6050.sct"
+--library_type=microlib --strict --scatter "..\OBJ\MPU6050.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\MPU6050.map" -o ..\OBJ\MPU6050.axf

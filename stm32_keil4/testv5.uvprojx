@@ -402,11 +402,6 @@
               <FilePath>.\HARDWARE\LED\led.c</FilePath>
             </File>
             <File>
-              <FileName>ILI93xx.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\HARDWARE\LCD\ILI93xx.c</FilePath>
-            </File>
-            <File>
               <FileName>key.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\HARDWARE\KEY\key.c</FilePath>

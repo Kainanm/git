@@ -14,14 +14,14 @@ int sort_out[MAP_LENGTH]={0};
 
 // for FIR
 static float32_t firStateF32[BLOCK_SIZE + NUM_TAPS - 1]; // Must be global
-/* 4hz sampling
+// 4hz sampling
 const float firCoeffs32[NUM_TAPS] = 
 { 
 	0.0122954799504127, 0.0425068233315651,
     0.0718910972165521, 0.0718910972165521, 0.0425068233315651,
     0.0122954799504127
 };
-*/
+
 /*
 const float firCoeffs32[NUM_TAPS] = 
 { 
@@ -33,6 +33,7 @@ const float firCoeffs32[NUM_TAPS] =
     0.0019906816571561
 };
 */
+/* 17 Hz
 const float firCoeffs32[NUM_TAPS] = 
 { 
 	0.000638089232304094, 0.00113749927915644,
@@ -48,6 +49,7 @@ const float firCoeffs32[NUM_TAPS] =
     0.00741121218618356, 0.00514989906986831, 0.00337958711571103,
     0.002061834022221, 0.00113749927915644, 0.000638089232304094
 };
+*/
 // for FFT
 uint32_t fftSize = LENGTH;
 uint32_t ifftFlag = 0;
@@ -146,7 +148,7 @@ void detrend(float y[], int n){
 int32_t arm_fft(float32_t *testInput_fft, float32_t *testOutput_fft){
 
   /* Process the data through the CFFT/CIFFT module */
-  arm_cfft_f32(&arm_cfft_sR_f32_len1024, testInput_fft, ifftFlag, doBitReverse);
+  arm_cfft_f32(&arm_cfft_sR_f32_len256, testInput_fft, ifftFlag, doBitReverse);
 
   /* Process the data through the Complex Magnitude Module for
   calculating the magnitude at each bin */
