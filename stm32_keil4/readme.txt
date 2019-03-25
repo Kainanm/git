@@ -41,3 +41,6 @@ resp_rate_cal会卡住
 2018年9月6日15:18:38
 已重新将breath_rate_cal放到中断里
 
+2018年12月26日14:04:47
+connect PA0 and PB5 when using
+
